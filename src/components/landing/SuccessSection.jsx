@@ -20,10 +20,10 @@ const SuccessSection = () => {
 
         {/* Buttons */}
         <div className="flex flex-row justify-center items-center gap-5 ">
-          <button className="bg-[#00A86B] hover:bg-green-700 text-white cursor-pointer font-medium  rounded-xl shadow-md transition-colors duration-200 ">
+          <button className="bg-[#00A86B] hover:bg-green-700 text-white cursor-pointer font-medium py-2 px-6  rounded-xl shadow-md transition-colors duration-200 ">
             Start Thesis
           </button>
-          <button className="border-2 border-green-600 text-green-600 hover:bg-green-50 cursor-pointer font-medium rounded-xl py-2 px-6  shadow-md transition-colors duration-200">
+          <button className="border-1 border-green-600 text-green-600 hover:bg-green-50 cursor-pointer font-medium rounded-xl py-2 px-6  shadow-md transition-colors duration-200">
             Write Paper
           </button>
         </div>
