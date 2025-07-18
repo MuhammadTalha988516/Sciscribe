@@ -4,6 +4,7 @@ import React from "react";
 import Navbar from "./components/home/Navbar";
 import CTASection from "./components/home/CTASection";
 import Footer from "./components/home/Footer";
+import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
 
 // Landing components
 import Banner from "./components/landing/Banner";
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <FloatingWhatsapp />
       <Banner />
       <Middle />
 
