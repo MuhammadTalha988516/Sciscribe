@@ -17,7 +17,7 @@ const Banner = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug mb-4">
             Write Your{' '}
             <span className="bg-green-500 text-white px-2 rounded-md inline-block">
-              Medical Thesis
+              Thesis
             </span>{' '}
             <br />
             with Clarity, Confidence, & <br />
@@ -25,7 +25,7 @@ const Banner = () => {
           </h1>
 
           <p className="text-gray-600 text-lg mb-6">
-            Step-by-step guidance and practical training designed just for medical students and researchers.
+            Step-by-step guidance and practical training designed just for students and researchers.
             From thesis writing to data skills, we help you finish strong & grow your academic career.
           </p>
 

@@ -2,17 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
-import AboutUs from "./components/AboutUs/AboutUs";
-import CourseBanner from "./components/Courses/CourseBanner"
-import CoursePage from "./components/Courses/CoursePage"; // ✅ Fix here
+import AboutUs from "./components/pages/AboutPage";
+import Course from "./components/pages/Courses"; // ✅ Uncommented & make sure it exists!
 
 // Common
 import Navbar from "./components/home/Navbar";
-import CTASection from "./components/home/CTASection";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
 
-// Home Sections
+// Home
 import Banner from "./components/landing/Banner";
 import Middle from "./components/landing/Middle";
 import SuccessSection from "./components/landing/SuccessSection";
@@ -20,17 +18,13 @@ import FAQ from "./components/landing/FAQ";
 import ResearchSkills from "./components/landing/ResearchSkills";
 import Work from "./components/landing/Work";
 
-
 const App = () => {
   return (
     <Router>
-      {/* <ScrollToTop /> */}
       <div className="flex flex-col min-h-screen">
-        {/* Global Components */}
         <Navbar />
         <FloatingWhatsapp />
 
-        {/* Page Routing */}
         <Routes>
           {/* Home Page */}
           <Route
@@ -44,7 +38,6 @@ const App = () => {
                   <ResearchSkills />
                   <Work />
                   <FAQ />
-                  <CTASection />
                 </main>
               </>
             }
@@ -52,9 +45,12 @@ const App = () => {
 
           {/* About Page */}
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/courses" element={<CourseBanner />} />
 
-          {/* 404 Page */}
+          {/* Courses Wrapper: all and single */}
+          <Route path="/courses" element={<Course />} />
+          <Route path="/courses/:slug" element={<Course />} />
+
+          {/* 404 */}
           <Route
             path="*"
             element={

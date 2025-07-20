@@ -1,3 +1,9 @@
+import cbanner from "../../assets/course-banner.jpg";
+import cbootcamp from "../../assets/course-bootcamp.jpg";
+ import cwriting from "../../assets/course-writing.jpg";
+ import canalysis from "../../assets/course-analysis.jpg";
+import cai from "../../assets/course-ai.jpg";
+import cbio from "../../assets/course-bioinformatics.jpg";
 
 export const landingPage = {
   headline: "Your Research, Our Expertise, Write, Analyze, Publish with Confidence",
@@ -63,31 +69,37 @@ export const servicesPage = {
   services: [
     {
       title: "Editing & Proofreading",
+      slug: "editing-proofreading",
       description:
         "Polish your documents with professional editing and proofreading for grammar, syntax, formatting, and scientific accuracy. Ideal for journal submissions, grant proposals, and presentations.",
     },
     {
       title: "Scientific Consultancy",
+      slug: "scientific-consultancy",
       description:
         "Need expert input on study design, methodology, or publication strategy? We provide one-on-one consultancy for research planning, protocol development, and scientific insights. Available online or in-person for institutions.",
     },
     {
       title: "Data Analysis",
+      slug: "data-analysis",
       description:
         "Our experts offer statistical and bioinformatics support using tools like R, SPSS, Python, and more. We explain the results and help you interpret them meaningfully.",
     },
     {
       title: "AI & Machine Learning Training",
+      slug: "ai-ml-training",
       description:
         "We offer beginner to advanced workshops on the use of AI and ML in scientific research. Learn how to apply data-driven techniques to biological and health-related data.",
     },
     {
       title: "Scientific Writing & Communication",
+      slug: "scientific-writing",
       description:
         "Join our training sessions designed to improve clarity, structure, and impact in your scientific writing. Available as virtual courses or in-person seminars.",
     },
     {
       title: "In-Person Seminars & Institutional Trainings",
+      slug: "in-person-seminars",
       description:
         "We offer tailored in-person workshops and seminars for universities, research centers, and academic institutions.",
     },
@@ -106,37 +118,43 @@ export const coursesPage = {
     heading: "Learn with SciScribe: Science Made Simple",
     description:
       "We offer practical, hands-on courses designed for students, researchers, and early-career professionals looking to build skills in:",
+      image: cbanner,
   },
   courses: [
     {
       title: "Bioinformatics Foundations",
-      description:
-        "Understand databases, tools, and workflows used in molecular biology and genomics research.",
       slug: "bioinformatics",
+      description:
+        "Understand key databases, tools, and workflows used in genomics, transcriptomics, and molecular biology research. Designed for beginners and life science researchers transitioning into computational biology.",
+      image: cbio,
     },
     {
       title: "Research Methodology Bootcamp",
-      description:
-        "Master research design, sampling techniques, literature reviews, and data collection methods.",
       slug: "research-methods",
+      description:
+        "Master the essentials of study design, sampling, data collection, and literature review techniques. Ideal for thesis planning and academic research proposals.",
+      image: cbootcamp,
     },
     {
       title: "Scientific Writing for Publication",
-      description:
-        "Learn how to structure papers, write impactful abstracts, and respond to reviewers.",
       slug: "scientific-writing",
+      description:
+        "Learn to craft well-structured manuscripts, write compelling abstracts, and handle peer review feedback. Suited for researchers preparing papers for submission.",
+      image: cwriting,
     },
     {
       title: "Data Analysis with R and SPSS",
-      description:
-        "Gain practical experience in analyzing biological or survey data and visualizing results.",
       slug: "data-analysis",
+      description:
+        "Gain hands-on experience in analyzing biological or social science data. Learn practical steps in data cleaning, visualization, and statistical testing using R and SPSS.",
+      image: canalysis,
     },
     {
       title: "Introduction to AI & ML for Researchers",
-      description:
-        "Understand the basics of artificial intelligence and machine learning, including applications in scientific data analysis, pattern recognition, and predictive modeling.",
       slug: "ai-ml",
+      description:
+        "Explore the basics of artificial intelligence and machine learning, with a focus on how these technologies are transforming biological and health data analysis. No prior coding required.",
+      image: cai,
     },
   ],
   flexibleLearning: [
