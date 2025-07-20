@@ -15,15 +15,13 @@ const FloatingWhatsapp = () => {
 
   return (
     <a
-      href="https://wa.me/919999999999" // replace with your number
+      href="https://wa.me/919999999999" 
       target="_blank"
       rel="noopener noreferrer"
-      className={fixed bottom-6 right-6 z-50}
+      className="fixed bottom-6 right-6 z-50"
     >
       {/* Outer Circle Effect */}
-      <span
-        className={absolute inset-0 rounded-full bg-green-600/20 animate-ping}
-      ></span>
+      <span className="absolute inset-0 rounded-full bg-green-600/20 animate-ping"></span>
 
       {/* WhatsApp Button */}
       <div

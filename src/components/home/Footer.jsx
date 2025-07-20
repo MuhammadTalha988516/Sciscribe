@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo.png"
 import { FaInstagram,FaFacebook,FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="bg-[#212D35] text-white pt-28 pb-8">
+    <footer className=" bg-[#212D35] text-white pt-28 pb-8">
       <div className="max-w-6xl mx-auto my-2 px-6 grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
         {/* Logo + description */}
         <div className="col-span-2">
