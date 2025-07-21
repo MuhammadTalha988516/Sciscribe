@@ -4,16 +4,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Pages
 import AboutUs from "./components/AboutUs/AboutUs";
 import CourseBanner from "./components/Courses/CourseBanner";
-// import CoursePage from "./components/Courses/CoursePage"; // Uncomment if needed
+import Course from "./components/pages/Courses";
 
 // Common Components
 import Navbar from "./components/home/Navbar";
-import CTASection from "./components/home/CTASection";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
 import Features from "./components/home/features";
 
-// Home Sections
+// Home
 import Banner from "./components/landing/Banner";
 import Middle from "./components/landing/Middle";
 import SuccessSection from "./components/landing/SuccessSection";
@@ -30,11 +29,9 @@ const App = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        {/* Global Components */}
         <Navbar />
         <FloatingWhatsapp />
 
-        {/* Page Routing */}
         <Routes>
           {/* Home Page */}
           <Route
@@ -48,7 +45,6 @@ const App = () => {
                   <ResearchSkills />
                   <Work />
                   <FAQ />
-                  <CTASection />
                 </main>
               </>
             }
@@ -57,10 +53,12 @@ const App = () => {
           {/* About Page */}
           <Route path="/about-us" element={<AboutUs />} />
 
-          {/* Courses Page */}
+          {/* Courses Pages */}
           <Route path="/courses" element={<CourseBanner />} />
+          <Route path="/courses/all" element={<Course />} />
+          <Route path="/courses/:slug" element={<Course />} />
 
-          {/* Editing and Proofreading Services */}
+          {/* Editing & Proofreading Service Page */}
           <Route
             path="/editing-and-proofreading"
             element={
@@ -84,7 +82,6 @@ const App = () => {
           />
         </Routes>
 
-        {/* Global Footer */}
         <Footer />
       </div>
     </Router>

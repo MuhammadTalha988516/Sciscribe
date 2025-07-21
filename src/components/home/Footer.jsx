@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Logo from "../../assets/Logo.png"
 import { FaInstagram,FaFacebook,FaTwitter } from "react-icons/fa";
 const Footer = () => {
@@ -24,17 +25,17 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-2">Services</h3>
           <ul className="text-gray-400 space-y-1">
-            <li href="#">Research Paper</li>
-            <li href="#">Thesis Paper</li>
+           <li><Link to="/services/research">Research Paper</Link></li>
+            <li><Link to="/services/thesis">Thesis Paper</Link></li>
           </ul>
         </div>
 
         <div>
           <h3 className="font-semibold mb-2">Quick Links</h3>
           <ul className="text-gray-400 space-y-1">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Pricing</a></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/courses">Courses</Link></li>
+            
           </ul>
         </div>
 
