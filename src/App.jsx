@@ -1,17 +1,10 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import SuccessSection from './components/landing/SuccessSection'
-import FAQ from './components/landing/FAQ'
-import ResearchSkills from './components/landing/ResearchSkills'
-import Work from './components/landing/Work'
-=======
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
 import AboutUs from "./components/AboutUs/AboutUs";
 import CourseBanner from "./components/Courses/CourseBanner";
-// import CoursePage from "./components/Courses/CoursePage"; // Only if needed
+// import CoursePage from "./components/Courses/CoursePage"; // Uncomment if needed
 
 // Common Components
 import Navbar from "./components/home/Navbar";
@@ -27,32 +20,21 @@ import SuccessSection from "./components/landing/SuccessSection";
 import FAQ from "./components/landing/FAQ";
 import ResearchSkills from "./components/landing/ResearchSkills";
 import Work from "./components/landing/Work";
->>>>>>> Stashed changes
 
 // Editing & Proofreading Service Sections
 import BannerSection from "./components/EdtandProfSrv/BannerSection";
 import MiddleSection from "./components/EdtandProfSrv/MiddleSection";
 import WorkSection from "./components/EdtandProfSrv/WorkSection";
 
-function App() {
+const App = () => {
   return (
-<<<<<<< Updated upstream
-    <div>
-      <SuccessSection />
-      <ResearchSkills/>
-      <Work/>
-  
-      <FAQ />
-
-
-    </div>
-=======
     <Router>
       <div className="flex flex-col min-h-screen">
-        {/* Global Layout */}
+        {/* Global Components */}
         <Navbar />
         <FloatingWhatsapp />
 
+        {/* Page Routing */}
         <Routes>
           {/* Home Page */}
           <Route
@@ -86,12 +68,12 @@ function App() {
                 <BannerSection />
                 <MiddleSection />
                 <WorkSection />
-                <Features/>
+                <Features />
               </>
             }
           />
 
-          {/* 404 Not Found */}
+          {/* 404 Page */}
           <Route
             path="*"
             element={
@@ -106,8 +88,7 @@ function App() {
         <Footer />
       </div>
     </Router>
->>>>>>> Stashed changes
   );
-}
+};
 
 export default App;

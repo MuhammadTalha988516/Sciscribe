@@ -21,7 +21,11 @@ const FloatingWhatsapp = () => {
       className="fixed bottom-6 right-6 z-50"
     >
       {/* Outer Circle Effect */}
+<<<<<<< HEAD
       <span className="absolute inset-0 rounded-full bg-green-600 animate-ping"></span>
+=======
+      <span className="absolute inset-0 rounded-full bg-green-600/20 animate-ping"></span>
+>>>>>>> landingpage
 
       {/* WhatsApp Button */}
       <div
@@ -32,7 +36,11 @@ const FloatingWhatsapp = () => {
           ${scrolled ? "scale-110 shadow-2xl" : "scale-100"}
         `}
       >
+<<<<<<< HEAD
         <FaWhatsapp size={30} />
+=======
+        <FaWhatsapp size={28} />
+>>>>>>> landingpage
       </div>
     </a>
   );

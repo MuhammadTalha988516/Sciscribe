@@ -32,18 +32,18 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-white text-black">
+    <section className="py-16 px-4 bg-[hsba(0, 0%, 0%, 0.25)] text-black">
       <h2 className="text-3xl font-extrabold text-center mb-10">FAQ</h2>
 
-      <div className="max-w-2xl mx-auto space-y-4">
+      <div className="max-w-2xl mx-auto space-y-[3px]">
         {faqData.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-100 shadow-md rounded-sm transition-all duration-300"
+            className="bg-gray-200 border border-gray-300 shadow-[#00000040] shadow-xl rounded-none transition-all duration-300"
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium text-gray-800"
+              className="w-full flex justify-between items-center px-6 py-3 text-left font-medium text-gray-800"
             >
               {item.question}
               <span className="ml-4 text-gray-600">
