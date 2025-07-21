@@ -6,7 +6,7 @@ import blueBlob from '../../assets/Ellipse b.png';
 
 const Banner = () => {
   return (
-    <section className="bg-white py-30 px-6">
+    <section className="bg-black py-30 px-6">
       <div className="max-w-7xl mx-auto  grid md:grid-cols-2 items-center gap-12 ">
         {/* Left Side - Text */}
         <div>
@@ -14,7 +14,7 @@ const Banner = () => {
             Tight deadlines, no clear guidance – you are not alone.
           </h4>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-snug mb-4">
             Write Your{' '}
             <span className="bg-green-500 text-white px-2 rounded-md inline-block">
               Medical Thesis
