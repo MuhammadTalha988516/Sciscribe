@@ -3,7 +3,7 @@ import cbootcamp from "../../assets/course-bootcamp.jpg";
  import cwriting from "../../assets/course-writing.jpg";
  import canalysis from "../../assets/course-analysis.jpg";
 import cai from "../../assets/course-ai.jpg";
-import cbio from "../../assets/course-bioinformatics.jpg";
+import cbio from "../../assets/course-bioinformatics.png";
 
 export const landingPage = {
   headline: "Your Research, Our Expertise, Write, Analyze, Publish with Confidence",
