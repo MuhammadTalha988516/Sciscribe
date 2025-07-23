@@ -1,20 +1,17 @@
 import React from 'react';
-import studentImg from '../../assets/dboy.png'; 
-import labImg from '../../assets/dgirl.png';        
-import greenBlob from '../../assets/Ellipse g.png';
-import blueBlob from '../../assets/Ellipse b.png';
+import heroImg from '../../assets/banner.jpg'; // ✅ Use your transparent image
 
 const Banner = () => {
   return (
-    <section className="bg-white py-30 px-6">
-      <div className="max-w-7xl mx-auto  grid md:grid-cols-2 items-center gap-12 ">
+    <section className="py-30 px-6">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
         {/* Left Side - Text */}
         <div>
           <h4 className="text-green-500 text-sm md:text-base mb-2">
             Tight deadlines, no clear guidance – you are not alone.
           </h4>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-snug mb-4">
             Write Your{' '}
             <span className="bg-green-500 text-white px-2 rounded-md inline-block">
               Thesis
@@ -24,7 +21,7 @@ const Banner = () => {
             the Right Guidance.
           </h1>
 
-          <p className="text-gray-600 text-lg mb-6">
+          <p className="text-gray-300 text-lg mb-6">
             Step-by-step guidance and practical training designed just for students and researchers.
             From thesis writing to data skills, we help you finish strong & grow your academic career.
           </p>
@@ -40,20 +37,12 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Right Side - Images */}
-        <div className="flex justify-center items-center  gap-12">
-        
-        
-
+        {/* Right Side - Single Transparent Image */}
+        <div className="flex justify-center items-center">
           <img
-            src={studentImg}
-            alt="Student"
-            className="w-[285px] h-[382px]   border-blue-500"
-          />
-          <img
-            src={labImg}
-            alt="Lab"
-            className="w-[249px] h-[382px] -mt-14 "
+            src={heroImg}
+            alt="Research Hero"
+            className="w-full h-auto object-contain"
           />
         </div>
       </div>

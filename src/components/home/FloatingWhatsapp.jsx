@@ -32,7 +32,7 @@ const FloatingWhatsapp = () => {
           ${scrolled ? "scale-110 shadow-2xl" : "scale-100"}
         `}
       >
-        <FaWhatsapp size={28} />
+        <FaWhatsapp size={30} />
       </div>
     </a>
   );

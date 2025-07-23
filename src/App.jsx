@@ -1,28 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Pages
-import AboutUs from "./components/pages/AboutPage";
-import Course from "./components/pages/Courses"; // ✅ Uncommented & make sure it exists!
-import LearnMore from "./components/AboutUs/LearnMore"; // adjust path as needed
-// import CourseDetail from "./components/Courses/CourseDetail";
-
-
+// ✅ Pages
+import Homepage from "./components/pages/homepage";
+import AboutUs from "./components/AboutUs/AboutUs";
+import LearnMore from "./components/AboutUs/LearnMore";
+import Course from "./components/pages/Courses";
+import CourseBanner from "./components/Courses/CourseBanner";
+import ContactPage from "./components/pages/ContactPage";
+import Services from "./components/pages/Services";
 import SignUp from "./components/Credentials/SignUp";
 
-
-// Common
+// ✅ Common Components
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
-
-// Home
-import Banner from "./components/landing/Banner";
-import Middle from "./components/landing/Middle";
-import SuccessSection from "./components/landing/SuccessSection";
-import FAQ from "./components/landing/FAQ";
-import ResearchSkills from "./components/landing/ResearchSkills";
-import Work from "./components/landing/Work";
 
 const App = () => {
   return (
@@ -32,33 +24,28 @@ const App = () => {
         <FloatingWhatsapp />
 
         <Routes>
-          {/* Home Page */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Banner />
-                <Middle />
-                <main className="flex-grow">
-                  <SuccessSection />
-                  <ResearchSkills />
-                  <Work />
-                  <FAQ />
-                </main>
-              </>
-            }
-          />
+          {/* ✅ Home */}
+          <Route path="/" element={<Homepage />} />
 
-          {/* About Page */}
+          {/* ✅ About */}
           <Route path="/about-us" element={<AboutUs />} />
-
-          {/* Courses Wrapper: all and single */}
-          <Route path="/courses" element={<Course />} />
-          <Route path="/courses/:slug" element={<Course />} />
           <Route path="/learn-more/:section" element={<LearnMore />} />
-{/* <Route path="/courses-detail/:slug" element={<CourseDetail />} /> */}
-          <Route path="/sign-up" element ={<SignUp />} />
-          {/* 404 */}
+
+          {/* ✅ Courses */}
+          <Route path="/courses" element={<CourseBanner />} />
+          <Route path="/courses/all" element={<Course />} />
+          <Route path="/courses/:slug" element={<Course />} />
+
+          {/* ✅ Services */}
+          <Route path="/services" element={<Services />} />
+
+          {/* ✅ Contact */}
+          <Route path="/contact-us" element={<ContactPage />} />
+
+          {/* ✅ Sign Up */}
+          <Route path="/sign-up" element={<SignUp />} />
+
+          {/* ✅ 404 */}
           <Route
             path="*"
             element={

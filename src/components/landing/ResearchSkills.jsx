@@ -26,32 +26,33 @@ const courses = [
 
 const ResearchCourses = () => {
   return (
-    <section className="py-16 px-4 bg-white text-black">
+    <section className="py-16 px-4 text-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="mb-12">
           <h2 className="text-3xl font-extrabold mb-2 text-left">
             Level Up Your Research Skills
           </h2>
-          <p className="text-gray-600 text-left">
-            Not your usual boring lectures. Real skills, real quick designed to help you crush your research and write like a pro.
+          <p className="text-gray-300 text-left">
+            Not your usual boring lectures. Real skills, real quick — designed to help you crush your research and write like a pro.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {courses.map((course, index) => (
-            <div key={index} className="flex flex-col items-start text-left">
+            <div
+              key={index}
+              className="flex flex-col items-start text-left rounded-2xl border border-white/20 backdrop-blur-sm p-4 transition hover:border-[#00A86B]"
+            >
               <img
                 src={course.image}
                 alt={course.title}
-                className="rounded-2xl border-3 border-black mb-4 w-full h-48 object-fill"
+                className="rounded-2xl mb-4 w-full h-48 object-cover"
               />
-              <h3 className="text-lg font-bold mb-2">{course.title}</h3>
-              <p className="text-gray-700 mb-4 text-sm">
-                {course.description}
-              </p>
-              <button className="mt-auto bg-[#00A86B] hover:bg-green-700 cursor-pointer text-white text-medium font-semibold py-2 px-3 rounded-xl transition shadow-md shadow-[#00000040]">
+              <h3 className="text-lg font-bold mb-2 text-[#00A86B]">{course.title}</h3>
+              <p className="text-gray-300 mb-4 text-sm">{course.description}</p>
+              <button className="mt-auto bg-[#00A86B] hover:bg-green-700 cursor-pointer text-white font-semibold py-2 px-4 rounded-full transition shadow-md">
                 See Details
               </button>
             </div>

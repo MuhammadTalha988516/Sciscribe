@@ -1,9 +1,9 @@
 import React from 'react';
-import labImg from '../../assets/doc.png'; // Update with actual path
+import labImg from '../../assets/herosection.jpg'; // ✅ Update with actual path
 
 const Middle = () => {
   return (
-    <section className="bg-[#D9D9D9] py-20 px-4 ">
+    <section className="py-20 px-4">
       <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left - Image */}
         <div>
@@ -15,12 +15,12 @@ const Middle = () => {
         </div>
 
         {/* Right - Text Content */}
-        <div className="max-w-[1006px] ">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Why <span className="text-green-600">SciScribe</span> Works for You
+        <div className="max-w-[1006px]">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Why <span className="text-[#00A86B]">SciScribe</span> Works for You
           </h2>
 
-          <ul className="space-y-4 text-gray-700 text-lg">
+          <ul className="space-y-4 text-gray-200 text-lg">
             <li>
               <strong>Step-by-step thesis help</strong> – Clear guidance from your first draft to final formatting.
             </li>

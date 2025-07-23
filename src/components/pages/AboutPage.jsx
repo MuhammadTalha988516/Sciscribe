@@ -1,21 +1,31 @@
 import React from 'react';
-import AboutUs from '../AboutUs/AboutUs'; 
+import AboutUs from '../AboutUs/AboutUs';
 import FAQ from '../landing/FAQ';
 
 const AboutPage = () => {
   return (
-    <main className="pt-20 bg-black min-h-screen">
-      {/* Optional page header */}
-      {/* <section className="text-center py-8 bg-green-700 text-white">
-        <h1 className="text-4xl font-bold">About Us</h1>
-        <p className="mt-2 text-sm">Learn more about who we are and why we help</p>
-      </section> */}
+    <div className="relative w-full min-h-screen overflow-hidden">
+      {/* ✅ Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/about-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* AboutUs section */}
-      <AboutUs />
-      <FAQ />
-    </main>
-    
+      {/* ✅ Optional dark overlay */}
+      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+      {/* ✅ Content */}
+      <main className="relative z-20">
+        <AboutUs />
+        <FAQ />
+      </main>
+    </div>
   );
 };
 
