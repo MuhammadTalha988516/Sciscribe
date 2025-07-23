@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutUs from "./components/AboutUs/AboutUs";
 import CourseBanner from "./components/Courses/CourseBanner";
 import Course from "./components/pages/Courses";
+import ContactPage from "./components/pages/ContactPage"
 
 // Common Components
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
-import Features from "./components/home/features";
+import CTASection from "./components/home/CTASection";
 
-// Home
+// Home Sections
 import Banner from "./components/landing/Banner";
 import Middle from "./components/landing/Middle";
 import SuccessSection from "./components/landing/SuccessSection";
@@ -20,10 +21,10 @@ import FAQ from "./components/landing/FAQ";
 import ResearchSkills from "./components/landing/ResearchSkills";
 import Work from "./components/landing/Work";
 
-// Editing & Proofreading Service Sections
-import BannerSection from "./components/EdtandProfSrv/BannerSection";
-import MiddleSection from "./components/EdtandProfSrv/MiddleSection";
-import WorkSection from "./components/EdtandProfSrv/WorkSection";
+// Editing & Proofreading Service
+// import GenericServicePage from "./components/services/GenericServicePage";
+
+
 
 const App = () => {
   return (
@@ -33,7 +34,7 @@ const App = () => {
         <FloatingWhatsapp />
 
         <Routes>
-          {/* Home Page */}
+          {/* Home */}
           <Route
             path="/"
             element={
@@ -45,33 +46,33 @@ const App = () => {
                   <ResearchSkills />
                   <Work />
                   <FAQ />
+                  <CTASection />
                 </main>
               </>
             }
           />
 
-          {/* About Page */}
+          {/* About */}
           <Route path="/about-us" element={<AboutUs />} />
 
-          {/* Courses Pages */}
+          {/* Courses */}
           <Route path="/courses" element={<CourseBanner />} />
           <Route path="/courses/all" element={<Course />} />
           <Route path="/courses/:slug" element={<Course />} />
 
-          {/* Editing & Proofreading Service Page */}
-          <Route
-            path="/editing-and-proofreading"
-            element={
-              <>
-                <BannerSection />
-                <MiddleSection />
-                <WorkSection />
-                <Features />
-              </>
-            }
-          />
+          {/* Editing & Proofreading
+          <Route path="/editing-and-proofreading" 
+          element=
+          {
+          <GenericServicePage />
+          } /> */}
+          
 
-          {/* 404 Page */}
+          {/* Contact Us */}
+          <Route path="/contact-us" element={<ContactPage />} />  
+
+
+          {/* 404 */}
           <Route
             path="*"
             element={

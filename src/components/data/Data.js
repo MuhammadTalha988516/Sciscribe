@@ -68,50 +68,104 @@ export const aboutUsPage = {
 export const servicesPage = {
   services: [
     {
+      route: "/services/editing-proofreading",
       title: "Editing & Proofreading",
-      slug: "editing-proofreading",
-      description:
-        "Polish your documents with professional editing and proofreading for grammar, syntax, formatting, and scientific accuracy. Ideal for journal submissions, grant proposals, and presentations.",
+      description: "Perfect your manuscript with clarity and polish.",
+      bannerText: "Messy drafts, looming submissions – we’ll help you shine.",
+      image1: "assets/services/editing1.png",
+      image2: "assets/services/editing2.png",
+      middleImg: "assets/services/lab.png",
+      steps: [
+        "Step-by-step thesis help",
+        "Tailored for students",
+        "Plagiarism-safe writing",
+        "Hands-on training",
+        "Made for tight schedules"
+      ]
     },
     {
+      route: "/services/scientific-consultancy",
       title: "Scientific Consultancy",
-      slug: "scientific-consultancy",
-      description:
-        "Need expert input on study design, methodology, or publication strategy? We provide one-on-one consultancy for research planning, protocol development, and scientific insights. Available online or in-person for institutions.",
+      description: "Expert guidance for designing and executing research.",
+      bannerText: "Let’s bring clarity and confidence to your study design.",
+      image1: "assets/services/consult1.png",
+      image2: "assets/services/consult2.png",
+      middleImg: "assets/services/lab.png",
+      steps: [
+        "One-on-one expert sessions",
+        "Tailored methodology support",
+        "Clear publication strategy",
+        "Remote or on-site consultancy",
+        "Institutional collaboration options"
+      ]
     },
     {
+      route: "/services/data-analysis",
       title: "Data Analysis",
-      slug: "data-analysis",
-      description:
-        "Our experts offer statistical and bioinformatics support using tools like R, SPSS, Python, and more. We explain the results and help you interpret them meaningfully.",
+      description: "Statistical and bioinformatics support made easy.",
+      bannerText: "Confused by stats? We simplify data and drive insight.",
+      image1: "assets/services/data1.png",
+      image2: "assets/services/data2.png",
+      middleImg: "assets/services/lab.png",
+      steps: [
+        "R, SPSS, Python support",
+        "Graphical and statistical summaries",
+        "Interpreted reports",
+        "Bioinformatics pipelines",
+        "Training + analysis combos"
+      ]
     },
     {
+      route: "/services/ai-ml-training",
       title: "AI & Machine Learning Training",
-      slug: "ai-ml-training",
-      description:
-        "We offer beginner to advanced workshops on the use of AI and ML in scientific research. Learn how to apply data-driven techniques to biological and health-related data.",
+      description: "Hands-on ML workshops tailored for researchers.",
+      bannerText: "Future-proof your skills with ML for science.",
+      image1: "assets/services/ai1.png",
+      image2: "assets/services/ai2.png",
+      middleImg: "assets/services/lab.png",
+      steps: [
+        "Beginner to advanced content",
+        "Real biological datasets",
+        "Python & R workflows",
+        "Interactive, practical learning",
+        "Custom modules for teams"
+      ]
     },
     {
+      route: "/services/scientific-writing",
       title: "Scientific Writing & Communication",
-      slug: "scientific-writing",
-      description:
-        "Join our training sessions designed to improve clarity, structure, and impact in your scientific writing. Available as virtual courses or in-person seminars.",
+      description: "Clarity, structure, and confidence in every sentence.",
+      bannerText: "Write for impact. Publish with pride.",
+      image1: "assets/services/write1.png",
+      image2: "assets/services/write2.png",
+      middleImg: "assets/services/lab.png",
+      steps: [
+        "Scientific writing crash course",
+        "Reviewer-focused editing",
+        "Writing labs & assignments",
+        "Publication preparation",
+        "Email + abstract mastery"
+      ]
     },
     {
+      route: "/services/in-person-seminars",
       title: "In-Person Seminars & Institutional Trainings",
-      slug: "in-person-seminars",
-      description:
-        "We offer tailored in-person workshops and seminars for universities, research centers, and academic institutions.",
-    },
-  ],
-  highlights: [
-    "Personalized consultations",
-    "Timely delivery",
-    "Ethical and plagiarism-free work",
-    "Confidentiality guaranteed",
-    "Hybrid (online & in-person) learning options",
-  ],
+      description: "Custom on-site training for universities & groups.",
+      bannerText: "We come to you. Learn together, grow stronger.",
+      image1: "assets/services/seminar1.png",
+      image2: "assets/services/seminar2.png",
+      middleImg: "assets/services/lab.png",
+      steps: [
+        "Group workshops",
+        "Interactive content",
+        "Flexible scheduling",
+        "Custom topics per request",
+        "Follow-up support & materials"
+      ]
+    }
+  ]
 };
+
 
 export const coursesPage = {
   intro: {
