@@ -1,6 +1,8 @@
 import React from "react";
 import ContactInfo from "../ContactUs/ContactInfo";
 import ContactForm from "../ContactUs/ContactForm";
+import FAQ from "../landing/FAQ";
+
 
 const ContactPage = () => {
   return (
@@ -35,6 +37,11 @@ const ContactPage = () => {
         <ContactInfo />
         <ContactForm />
       </div>
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 pb-20">
+        <section className="py-12">
+            <FAQ/>
+        </section>
+        </div>
     </div>
   );
 };

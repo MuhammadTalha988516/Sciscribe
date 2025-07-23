@@ -1,4 +1,3 @@
-// ...imports
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -31,16 +30,19 @@ const Navbar = () => {
               About Us
             </Link>
 
-            {/* Services Dropdown */}
+            {/* ✅ Services Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
-              <button className="flex items-center space-x-1 px-2 py-1 rounded hover:bg-green-700 hover:text-white transition-colors">
+              <Link
+                to="/services"
+                className="flex items-center space-x-1 px-2 py-1 rounded hover:bg-green-700 hover:text-white transition-colors"
+              >
                 <span>Services</span>
                 <ChevronDown size={16} className={`transition-transform ${servicesDropdownOpen ? "rotate-180" : ""}`} />
-              </button>
+              </Link>
               {servicesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 bg-white rounded shadow-lg border border-gray-200 py-2 w-64 z-50">
                   {servicesPage.services.map((service) => (
@@ -62,7 +64,10 @@ const Navbar = () => {
               onMouseEnter={() => setCoursesDropdownOpen(true)}
               onMouseLeave={() => setCoursesDropdownOpen(false)}
             >
-              <Link to="/courses" className="flex items-center space-x-1 px-2 py-1 rounded hover:bg-green-700 hover:text-white transition-colors">
+              <Link
+                to="/courses"
+                className="flex items-center space-x-1 px-2 py-1 rounded hover:bg-green-700 hover:text-white transition-colors"
+              >
                 <span>Courses</span>
                 <ChevronDown size={16} className={`transition-transform ${coursesDropdownOpen ? "rotate-180" : ""}`} />
               </Link>
@@ -87,7 +92,6 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* ✅ Contact Us */}
             <Link to="/contact-us" className="px-2 py-1 rounded hover:bg-green-700 hover:text-white transition-colors">
               Contact Us
             </Link>
@@ -118,53 +122,60 @@ const Navbar = () => {
             About Us
           </Link>
 
-          {/* Services Mobile */}
-          <div className="flex flex-col items-center">
-            <button
-              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-              className="flex items-center space-x-1 hover:text-green-500"
-            >
-              <span>Services</span>
-              <ChevronDown size={16} className={`transition-transform ${servicesDropdownOpen ? "rotate-180" : ""}`} />
-            </button>
-            {servicesDropdownOpen && (
-              <div className="mt-2 flex flex-col items-center gap-2">
-                {servicesPage.services.map((service) => (
-                  <Link
-                    key={service.slug}
-                    to={`/services/${service.slug}`}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-gray-300 hover:text-green-500"
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Courses Mobile */}
-          <div className="flex flex-col items-center">
-            <button
-              onClick={() => setCoursesDropdownOpen(!coursesDropdownOpen)}
-              className="flex items-center space-x-1 hover:text-green-500"
-            >
-              <span>Courses</span>
-              <ChevronDown size={16} className={`transition-transform ${coursesDropdownOpen ? "rotate-180" : ""}`} />
-            </button>
-            {coursesDropdownOpen && (
-              <div className="mt-2 flex flex-col items-center gap-2">
-                <Link to="/courses/chatgpt" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-green-500">
-                  AI for Medical Research
+          {/* ✅ Mobile Services Link + Toggle */}
+          <Link
+            to="/services"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-green-500"
+          >
+            Services
+          </Link>
+          <button
+            onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+            className="flex items-center space-x-1 hover:text-green-500"
+          >
+            <ChevronDown size={16} className={`transition-transform ${servicesDropdownOpen ? "rotate-180" : ""}`} />
+          </button>
+          {servicesDropdownOpen && (
+            <div className="mt-2 flex flex-col items-center gap-2">
+              {servicesPage.services.map((service) => (
+                <Link
+                  key={service.slug}
+                  to={`/services/${service.slug}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-gray-300 hover:text-green-500"
+                >
+                  {service.title}
                 </Link>
-                <Link to="/courses/r-data" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-green-500">
-                  Data Analysis with R
-                </Link>
-              </div>
-            )}
-          </div>
+              ))}
+            </div>
+          )}
 
-          {/* ✅ Contact Us (Mobile) */}
+          {/* Mobile Courses */}
+          <Link
+            to="/courses"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-green-500"
+          >
+            Courses
+          </Link>
+          <button
+            onClick={() => setCoursesDropdownOpen(!coursesDropdownOpen)}
+            className="flex items-center space-x-1 hover:text-green-500"
+          >
+            <ChevronDown size={16} className={`transition-transform ${coursesDropdownOpen ? "rotate-180" : ""}`} />
+          </button>
+          {coursesDropdownOpen && (
+            <div className="mt-2 flex flex-col items-center gap-2">
+              <Link to="/courses/chatgpt" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-green-500">
+                AI for Medical Research
+              </Link>
+              <Link to="/courses/r-data" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-green-500">
+                Data Analysis with R
+              </Link>
+            </div>
+          )}
+
           <Link to="/contact-us" onClick={() => setMenuOpen(false)} className="hover:text-green-500">
             Contact Us
           </Link>

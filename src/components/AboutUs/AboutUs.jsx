@@ -17,7 +17,7 @@ const AboutUs = () => {
       </h1>
       <p className="text-lg text-gray-600 leading-relaxed text-center mb-16">
         SciScribe exists to help medical students and researchers write with clarity, confidence, and the right support.
-        Whether it’s your thesis, a research paper, or mastering AI tools – we break it down step by step.
+        Whether it your thesis, a research paper, or mastering AI tools – we break it down step by step.
         <br /><br />
         Built for busy schedules. Designed for real academic work. Focused on getting you from stuck to submitted – with skills that stay with you.
       </p>

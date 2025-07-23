@@ -2,29 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
+import Homepage from "./components/pages/homepage"; // ✅ NEW!
 import AboutUs from "./components/AboutUs/AboutUs";
 import CourseBanner from "./components/Courses/CourseBanner";
 import Course from "./components/pages/Courses";
-import ContactPage from "./components/pages/ContactPage"
+import ContactPage from "./components/pages/ContactPage";
+import Services from "./components/pages/Services";
 
 // Common Components
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
-import CTASection from "./components/home/CTASection";
-
-// Home Sections
-import Banner from "./components/landing/Banner";
-import Middle from "./components/landing/Middle";
-import SuccessSection from "./components/landing/SuccessSection";
-import FAQ from "./components/landing/FAQ";
-import ResearchSkills from "./components/landing/ResearchSkills";
-import Work from "./components/landing/Work";
-
-// Editing & Proofreading Service
-// import GenericServicePage from "./components/services/GenericServicePage";
-
-
 
 const App = () => {
   return (
@@ -35,22 +23,7 @@ const App = () => {
 
         <Routes>
           {/* Home */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Banner />
-                <Middle />
-                <main className="flex-grow">
-                  <SuccessSection />
-                  <ResearchSkills />
-                  <Work />
-                  <FAQ />
-                  <CTASection />
-                </main>
-              </>
-            }
-          />
+          <Route path="/" element={<Homepage />} />
 
           {/* About */}
           <Route path="/about-us" element={<AboutUs />} />
@@ -60,17 +33,11 @@ const App = () => {
           <Route path="/courses/all" element={<Course />} />
           <Route path="/courses/:slug" element={<Course />} />
 
-          {/* Editing & Proofreading
-          <Route path="/editing-and-proofreading" 
-          element=
-          {
-          <GenericServicePage />
-          } /> */}
-          
+          {/* Services */}
+          <Route path="/services" element={<Services />} />
 
-          {/* Contact Us */}
-          <Route path="/contact-us" element={<ContactPage />} />  
-
+          {/* Contact */}
+          <Route path="/contact-us" element={<ContactPage />} />
 
           {/* 404 */}
           <Route
