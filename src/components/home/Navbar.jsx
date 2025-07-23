@@ -126,9 +126,11 @@ const Navbar = () => {
 
           {/* CTA */}
           <div className="ml-auto">
+            <Link to="/sign-up">
             <button className="bg-[#00A86B] text-white px-4 py-2 rounded-lg hover:bg-green-950 transition-colors">
               Begin Your Journey
             </button>
+            </Link>
           </div>
         </div>
 
@@ -225,10 +227,12 @@ const Navbar = () => {
               </div>
             )}
           </div>
-
+          
+          <Link to="/sign-up">
           <button className="bg-green-800 text-white px-4 py-2 rounded-full hover:bg-green-950">
             Begin Your Journey
           </button>
+          </Link>
         </div>
       )}
     </>
@@ -236,3 +240,12 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+{/* <div className="ml-auto">
+  <Link to="/signup">
+    <button className="bg-[#00A86B] text-white px-4 py-2 rounded-lg hover:bg-green-950 transition-colors">
+      Begin Your Journey
+    </button>
+  </Link>
+</div> */}

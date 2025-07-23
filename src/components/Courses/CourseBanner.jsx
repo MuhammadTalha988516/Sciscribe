@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { coursesPage } from "../data/Data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -6,7 +6,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const CourseBanner = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out", once: false });
+  }, []);
+
   return (
     <section
       className="bg-cover bg-center bg-no-repeat py-24 px-4 md:px-16 mt-12 relative"
@@ -17,7 +24,11 @@ const CourseBanner = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
 
-      <div className="relative z-10 text-white text-center mb-16">
+      {/* Heading */}
+      <div
+        className="relative z-10 text-white text-center mb-16"
+        data-aos="fade-down"
+      >
         <h2 className="text-3xl md:text-5xl font-bold">
           {coursesPage.intro.heading}
         </h2>
@@ -27,7 +38,7 @@ const CourseBanner = () => {
       </div>
 
       {/* Swiper Slider */}
-      <div className="relative z-10">
+      <div className="relative z-10" data-aos="zoom-in">
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={30}
@@ -41,17 +52,25 @@ const CourseBanner = () => {
         >
           {coursesPage.courses.map((course, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-black bg-opacity-90 backdrop-blur-md border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition">
+              <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition duration-500 hover:shadow-2xl hover:scale-105">
+                {/* Course Image */}
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75 group-hover:blur-sm"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+
+                {/* Hover Content */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center px-4 transition-opacity duration-500">
+                  <h3 className="text-2xl font-bold text-white drop-shadow mb-2">
                     {course.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{course.description}</p>
+                  <p className="text-white/90 text-sm mb-4 drop-shadow">
+                    {course.description}
+                  </p>
+                  <button className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 transition">
+                    Learn More
+                  </button>
                 </div>
               </div>
             </SwiperSlide>
@@ -60,7 +79,10 @@ const CourseBanner = () => {
       </div>
 
       {/* Footer Text */}
-      <div className="relative z-10 mt-12 text-center text-white">
+      <div
+        className="relative z-10 mt-12 text-center text-white"
+        data-aos="fade-up"
+      >
         <p className="text-sm">{coursesPage.flexibleLearning.join(" • ")}</p>
       </div>
     </section>

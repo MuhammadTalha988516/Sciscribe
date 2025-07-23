@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import CourseBanner from "../Courses/CourseBanner";
-
 import CoursePage from "../Courses/CoursePage";
+import TopBanner from "../Courses/TopBanner";
 
 import { coursesPage } from "../data/Data";
+// import CourseDetail from "../Courses/CourseDetail";
 
 const Course = () => {
   const { slug } = useParams();
@@ -31,9 +32,16 @@ const Course = () => {
     );
   }
 
-  // Show all courses
+  
   return (
-    <CourseBanner />
+    <>
+      <TopBanner 
+        title="Our Courses"
+        subtitle="Explore our wide range of learning opportunities"
+      />
+      <CourseBanner />
+      {/* <CourseDetail /> */}
+    </>
   );
 };
 

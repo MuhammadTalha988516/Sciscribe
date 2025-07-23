@@ -32,7 +32,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-[hsba(0, 0%, 0%, 0.25)] text-black">
+    <section className="py-16 px-4 bg-[hsba(0, 0%, 0%, 0.25)] text-white">
       <h2 className="text-3xl font-extrabold text-center mb-10">FAQ</h2>
 
       <div className="max-w-2xl mx-auto space-y-[3px]">

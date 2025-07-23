@@ -4,6 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Pages
 import AboutUs from "./components/pages/AboutPage";
 import Course from "./components/pages/Courses"; // ✅ Uncommented & make sure it exists!
+import LearnMore from "./components/AboutUs/LearnMore"; // adjust path as needed
+// import CourseDetail from "./components/Courses/CourseDetail";
+
+
+import SignUp from "./components/Credentials/SignUp";
+
 
 // Common
 import Navbar from "./components/home/Navbar";
@@ -49,7 +55,9 @@ const App = () => {
           {/* Courses Wrapper: all and single */}
           <Route path="/courses" element={<Course />} />
           <Route path="/courses/:slug" element={<Course />} />
-
+          <Route path="/learn-more/:section" element={<LearnMore />} />
+{/* <Route path="/courses-detail/:slug" element={<CourseDetail />} /> */}
+          <Route path="/sign-up" element ={<SignUp />} />
           {/* 404 */}
           <Route
             path="*"

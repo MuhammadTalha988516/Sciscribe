@@ -228,5 +228,6 @@ export const howWeServe = [
   "Leading capacity-building initiatives grounded in respect and scientific advancement.",
 ];
 
+
 export const missionPoints = landingPage.mission;
 export const commitments = landingPage.commitments;
