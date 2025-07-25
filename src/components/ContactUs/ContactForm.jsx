@@ -48,7 +48,7 @@ const ContactForm = () => {
       {/* Service Package */}
       <div>
         <label className="block text-sm mb-1">What service are you interested in?*</label>
-        <select className="w-full px-4 py-2 bg-[#0f1c1d] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00A86B]">
+        <select className="w-full px-4 py-2 bg-[#0f1c1d] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00A86B] placeholder:Select a Service">
           <option>Select a package</option>
           <option>Editing & Proofreading</option>
           <option>Scientific Consultancy</option>
@@ -84,7 +84,7 @@ const ContactForm = () => {
       <div className="flex items-start gap-2">
         <input type="checkbox" className="mt-1 accent-[#00A86B]" />
         <label className="text-sm">
-          I consent to SciScribe Solutions storing and using my information for communication purposes.{" "}
+          I consent to SciScribe storing and using my information for communication purposes.{" "}
           <a href="#" className="underline text-[#00A86B]">Privacy Policy</a>
         </label>
       </div>

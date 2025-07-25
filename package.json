@@ -3,15 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "client": "vite",
-    "client:build": "vite build",
-    "client:preview": "vite preview",
-    "server": "nodemon Server/server.js",
-    "start": "node Server/server.js",
-    "lint": "eslint .",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "lint": "eslint ."
+},
+
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "aos": "^2.3.4",

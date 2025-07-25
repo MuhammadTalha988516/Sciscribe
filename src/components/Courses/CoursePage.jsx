@@ -5,7 +5,7 @@ import CourseBanner from "../Courses/CourseBanner";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// 👇 Import TopBanner
+//  Import TopBanner
 import TopBanner from "../Courses/TopBanner";
 
 const CoursePage = ({ pageData }) => {
@@ -23,7 +23,7 @@ const CoursePage = ({ pageData }) => {
 
   if (!pageData) {
     return (
-      <div className="text-center min-h-[400px] py-20 text-lg text-white bg-black">
+      <div className="text-center min-h-[400px] py-20 text-lg text-black bg-white">
         No course data available.
       </div>
     );
@@ -35,13 +35,13 @@ const CoursePage = ({ pageData }) => {
       : pageData.courses;
 
   return (
-    <div className="pt-0 bg-black text-white min-h-screen">
-      {/* 🔷 Common Top Banner */}
+    <div className="pt-0 bg-white text-black min-h-screen">
+      {/*  Common Top Banner */}
       
 
       {filteredCourses.map((course) => (
         <div key={course.slug}>
-          {/* ✅ Hero Section */}
+          {/*  Hero Section */}
           <section
   className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center px-4 md:px-16"
   data-aos="fade-down"
@@ -62,20 +62,20 @@ const CoursePage = ({ pageData }) => {
     <p className="text-lg md:text-xl drop-shadow">
       {course.description}
     </p>
-    <button className="mt-6 bg-green-500 text-black font-semibold px-6 py-3 rounded-full hover:bg-green-400 shadow transition">
+    {/* <button className="mt-6 bg-green-500 text-black font-semibold px-6 py-3 rounded-full hover:bg-green-400 shadow transition">
       Register Now
-    </button>
+    </button> */}
   </div>
 </section>
 
 
-          {/* 📌 Course Detail Section */}
+          {/*  Course Detail Section */}
           <section
             ref={sectionRefs[course.slug]}
-            className="max-w-6xl mx-auto px-4 py-16"
+            className="max-w-4xl mx-auto px-4 py-16"
             data-aos="fade-up"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-600 rounded-2xl p-8 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-green-500 rounded-2xl p-8 shadow-lg">
               <div className="flex flex-col justify-center">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   About {course.title}
@@ -89,7 +89,7 @@ const CoursePage = ({ pageData }) => {
                     <h3 className="font-semibold text-white mb-2 text-lg">
                       Flexible Learning Options:
                     </h3>
-                    <ul className="list-disc ml-6 text-gray-400 space-y-2">
+                    <ul className="list-disc ml-6 text-black space-y-2">
                       {pageData.flexibleLearning.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -109,7 +109,7 @@ const CoursePage = ({ pageData }) => {
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="rounded-xl  shadow-2xl w-full max-w-2xl max-h-2xl object-cover border-4 border-white/10"
+                  className="rounded-xl  shadow-2xl w-full max-w-2xl max-h-full object-cover border-4 border-white/10"
                 />
               </div>
             </div>
@@ -117,7 +117,7 @@ const CoursePage = ({ pageData }) => {
         </div>
       ))}
 
-      {/* 🔗 Common Banner */}
+    
       <CourseBanner />
     </div>
   );

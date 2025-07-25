@@ -60,7 +60,7 @@ const LearnMore = () => {
   }
 
   return (
-    <div className="relative min-h-screen bg-black text-white px-6 py-20 mt-10">
+    <div className="relative min-h-screen bg-white text-black px-6 py-20 mt-10">
       {/* Background image */}
       <img
         src={Grid}
@@ -69,7 +69,7 @@ const LearnMore = () => {
       />
 
       <div
-        className="relative z-10 max-w-5xl mx-auto backdrop-blur-xl bg-white/5 rounded-xl border border-white/10 p-10 shadow-xl"
+        className="relative z-10 max-w-5xl mx-auto backdrop-blur-xl bg-white/5 rounded-xl border border-white/10 p-10 shadow-2xl"
         data-aos="fade-up"
       >
         {/* Icon */}
@@ -90,7 +90,7 @@ const LearnMore = () => {
         {/* Paragraph */}
         {content.paragraph && (
           <p
-            className="text-center text-gray-300 text-lg leading-relaxed mb-10"
+            className="text-center text-black text-lg leading-relaxed mb-10"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -122,12 +122,12 @@ const LearnMore = () => {
 
         {/* Back Link */}
         <div className="text-center mt-6" data-aos="fade-up" data-aos-delay="400">
-          <Link
-            to="/about-us"
-            className="text-green-400 underline hover:text-green-300 transition"
-          >
-            ← Back to About Us
-          </Link>
+         <Link
+  to="/about-us"
+  className="inline-block px-4 py-2 bg-green-900 text-white rounded hover:bg-green-200 transition"
+>
+  Back to About Us
+</Link>
         </div>
       </div>
     </div>

@@ -9,7 +9,6 @@ import Course from "./components/pages/Courses";
 import CourseBanner from "./components/Courses/CourseBanner";
 import ContactPage from "./components/pages/ContactPage";
 import Services from "./components/pages/Services";
-import SignUp from "./components/Credentials/SignUp";
 
 // ✅ Common Components
 import Navbar from "./components/home/Navbar";
@@ -42,8 +41,7 @@ const App = () => {
           {/* ✅ Contact */}
           <Route path="/contact-us" element={<ContactPage />} />
 
-          {/* ✅ Sign Up */}
-          <Route path="/sign-up" element={<SignUp />} />
+          
 
           {/* ✅ 404 */}
           <Route

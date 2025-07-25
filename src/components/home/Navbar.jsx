@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Navbar */}
-      <div className="w-full h-[69px] bg-[#212D35] fixed top-0 left-0 z-50 flex items-center px-8 shadow">
+      <div className="w-full h-[69px] bg-black/50 backdrop-blur-sm fixed top-0 left-0 z-50 flex items-center px-8 shadow ">
         {/* Logo */}
         <div>
           <Link to="/">
@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
 
           <div className="ml-auto">
-            <Link to="/sign-up">
+            <Link to="/contact-us">
               <button className="bg-[#00A86B] text-white px-4 py-2 rounded-lg hover:bg-green-950 transition-colors">
                 Begin Your Journey
               </button>

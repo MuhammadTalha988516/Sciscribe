@@ -22,11 +22,11 @@ const CourseBanner = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-50 z-0"></div>
 
       {/* Heading */}
       <div
-        className="relative z-10 text-white text-center mb-16"
+        className="relative z-10 text-black text-center mb-16"
         data-aos="fade-down"
       >
         <h2 className="text-3xl md:text-5xl font-bold">

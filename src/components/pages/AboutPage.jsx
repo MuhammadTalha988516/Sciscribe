@@ -18,7 +18,7 @@ const AboutPage = () => {
       </video>
 
       {/* ✅ Optional dark overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      <div className="absolute inset-0 bg-white opacity-50 z-10"></div>
 
       {/* ✅ Content */}
       <main className="relative z-20">
