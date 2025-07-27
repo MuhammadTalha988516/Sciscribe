@@ -1,50 +1,40 @@
 import React from 'react';
-import heroImg from '../../assets/banner.jpg'; // ✅ Use your transparent image
+import BannerImg from '../../assets/BannerPhoto2.jpg'; // ✅ Your background image
 
 const Banner = () => {
   return (
-    <section className="py-30 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
-        {/* Left Side - Text */}
-        <div>
-          <h4 className="text-green-500 text-sm md:text-base mb-2">
-            Tight deadlines, no clear guidance – you are not alone.
-          </h4>
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      {/* ✅ Background image */}
+      <img
+        src={BannerImg}
+        alt="Research Hero"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      />
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-snug mb-4">
-            Write Your{' '}
-            <span className="bg-green-500 text-white px-2 rounded-md inline-block">
-              Thesis
-            </span>{' '}
-            <br />
-            with Clarity, Confidence, & <br />
-            the Right Guidance.
-          </h1>
+      {/* ✅ Overlay (optional for readability) */}
+      <div className="absolute inset-0  bg-opacity-50 z-10" />
 
-          <p className="text-gray-300 text-lg mb-6">
-            Step-by-step guidance and practical training designed just for students and researchers.
-            From thesis writing to data skills, we help you finish strong & grow your academic career.
-          </p>
+      {/* ✅ Centered text */}
+      <div className="relative z-20 text-center px-6 max-w-4xl">
+        <h4 className="text-green-400 text-lg md:text-base mb-2">
+          Tight deadlines, no clear guidance – you are not alone.
+        </h4>
 
-          {/* Buttons */}
-          <div className="flex gap-4 flex-wrap">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium">
-              Boost Writing
-            </button>
-            <button className="border border-green-600 text-green-600 hover:bg-green-50 px-6 py-3 rounded-full font-medium">
-              Master Research
-            </button>
-          </div>
-        </div>
+        <h1 className="text-5xl md:text-5xl font-bold text-white leading-snug mb-4">
+          Write Your{' '}
+          <span className="bg-green-500 text-white px-2 rounded-md inline-block">
+            Thesis
+          </span>{' '}
+          <br />
+          with Clarity, Confidence, & <br />
+          the Right Guidance.
+        </h1>
 
-        {/* Right Side - Single Transparent Image */}
-        <div className="flex justify-center items-center">
-          <img
-            src={heroImg}
-            alt="Research Hero"
-            className="w-full h-auto object-contain"
-          />
-        </div>
+        <p className="text-gray-200 text-2xl mb-6">
+          Step-by-step guidance and practical training designed just for students and researchers.
+          From thesis writing to data skills, we help you finish strong & grow your academic career.
+        </p>
+
       </div>
     </section>
   );

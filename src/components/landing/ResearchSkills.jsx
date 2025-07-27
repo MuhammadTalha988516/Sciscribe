@@ -1,60 +1,100 @@
 import React from "react";
-import ResearchSkills1 from "../../assets/ResearchSkills1.png";
-import ResearchSkills2 from "../../assets/ResearchSkills2.png";
-import ResearchSkills3 from "../../assets/ResearchSkills3.png";
+import BioInf from "../../assets/bioInformatics.jpg";
+import Research from "../../assets/Research.png";
+import DataAnalysis from "../../assets/Analysis.jpg";
+import AiandML from "../../assets/Ai.jpg";
+import Scientific from "../../assets/Science.jpg";
 
 const courses = [
   {
-    title: "Chat GPT for Medical Research",
+    title: "Bioinformatics Foundations",
     description:
-      "Learn how to harness AI tools like ChatGPT to help brainstorm, draft, and refine your research – making your workflow faster while keeping your unique insights front and center.",
-    image: ResearchSkills3,
+      "Understand key databases, tools, and workflows used in genomics, transcriptomics, and molecular biology research.",
+    image: BioInf,
   },
   {
-    title: "Medical Data Analysis with R",
+    title: "Research Methodology Bootcamp",
     description:
-      "Dive into medical data with confidence. This course breaks down R programming basics and data analysis techniques tailored specifically for medical research – no coding background required.",
-    image: ResearchSkills2,
+      "Master the essentials of study design, sampling, data collection, and literature review techniques.",
+    image: Research,
   },
   {
-    title: "Foundations of Medical Research",
+    title: "Scientific Writing for Publication",
     description:
-      "Build a strong foundation with clear guidance on research methods, study design, and best practices. Perfect for those new to medical research or wanting to refresh the essentials.",
-    image: ResearchSkills1,
+      "Learn to craft well-structured manuscripts, write compelling abstracts, and handle peer review feedback.",
+    image: Scientific,
+  },
+  {
+    title: "Data Analysis with R and    SPSS",
+    description:
+      "Gain hands-on experience in analyzing biological or social science data using R and SPSS.",
+    image: DataAnalysis,
+  },
+  {
+    title: "Introduction to AI & ML for Researchers",
+    description:
+      "Explore AI and machine learning basics transforming biological and health data analysis.",
+    image: AiandML,
   },
 ];
 
 const ResearchCourses = () => {
   return (
-    <section className="py-16 px-4 text-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Heading */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-extrabold mb-2 text-left">
-            Level Up Your Research Skills
-          </h2>
-          <p className="text-gray-300 text-left">
-            Not your usual boring lectures. Real skills, real quick — designed to help you crush your research and write like a pro.
-          </p>
-        </div>
+    <section className="py-16 px-4 bg-gray-900 text-white">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-center text-[#00A86B]">
+          Level Up Your Research Skills
+        </h2>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (
             <div
               key={index}
-              className="flex flex-col items-start text-left rounded-2xl border border-white/20 backdrop-blur-sm p-4 transition hover:border-[#00A86B]"
+              className="relative overflow-hidden  group h-100 cursor-pointer"
             >
+              {/* Background Image */}
               <img
                 src={course.image}
                 alt={course.title}
-                className="rounded-2xl mb-4 w-full h-48 object-cover"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-lg"
               />
-              <h3 className="text-lg font-bold mb-2 text-[#00A86B]">{course.title}</h3>
-              <p className="text-gray-300 mb-4 text-sm">{course.description}</p>
-              <button className="mt-auto bg-[#00A86B] hover:bg-green-700 cursor-pointer text-white font-semibold py-2 px-4 rounded-full transition shadow-md">
-                See Details
-              </button>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-opacity-40"></div>
+
+              {/* Content */}
+              <div className="relative z-10 flex flex-col h-full p-4">
+                {/* Heading */}
+                <h3 className="text-xl  font-bold text-white mb-2">
+                  {course.title}
+                </h3>
+
+                {/* Hidden overflow container */}
+                <div className="relative overflow-hidden flex-1">
+              <p className="absolute top-0 left-0 w-full text-sm text-gray-200 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
+               {course.description}
+              </p>
+
+                </div>
+
+                {/* Explore Link */}
+                <div className="mt-auto self-end overflow-hidden">
+                  <span className="relative inline-block font-semibold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                    <span className="border-b-2 border-[#00A86B] text-white">
+                      Explore
+                    </span>
+                    <span className="ml-2 inline-block align-middle relative overflow-hidden text-[#00A86B]">
+                      <span className="inline-block transition-all duration-500 ease-in-out group-hover:ml-4">
+                        →
+                      </span>
+                      <span
+                        className="absolute bottom-0 left-0 h-0.5 bg-[#00A86B] transition-all duration-500 ease-in-out group-hover:w-full"
+                        style={{ width: "0" }}
+                      ></span>
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>

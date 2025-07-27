@@ -14,6 +14,7 @@ import Services from "./components/pages/Services";
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
+import BannerVideo from "./components/landing/BannerVideo"; // ✅ import your BannerVideo
 
 const App = () => {
   return (
@@ -24,7 +25,15 @@ const App = () => {
 
         <Routes>
           {/* ✅ Home */}
-          <Route path="/" element={<Homepage />} />
+          <Route
+            path="/"
+            element={
+              <>
+    
+                <Homepage />
+              </>
+            }
+          />
 
           {/* ✅ About */}
           <Route path="/about-us" element={<AboutUs />} />
@@ -40,8 +49,6 @@ const App = () => {
 
           {/* ✅ Contact */}
           <Route path="/contact-us" element={<ContactPage />} />
-
-          
 
           {/* ✅ 404 */}
           <Route
