@@ -19,7 +19,7 @@ const Homepage = () => {
       <div className="bg-white" />
 
       {/* ✅ Home sections over video */}
-      <div className="relative z-20 flex flex-col space-y-24">
+      <div className="relative z-20 flex flex-col space-y-8">
         <BannerVideo/>
         <Banner />
         <OurServices/>

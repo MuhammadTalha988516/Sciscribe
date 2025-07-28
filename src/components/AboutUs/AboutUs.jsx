@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Target, Eye, Star, Users } from "lucide-react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Mission from "../../assets/mission.jpg";
+import Vision from "../../assets/vision.jpg";
+import Values from "../../assets/values.jpg";
 
 const AboutUs = () => {
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   const handleClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+    navigate("/contact-us");
   };
 
   return (
@@ -28,11 +28,13 @@ const AboutUs = () => {
       </div>
 
       {/* ✅ Title */}
-      <h1 className="text-4xl font-bold text-center mb-6">Who We Help & Why</h1>
+      <h1 className="text-4xl font-bold text-center mb-6 text-[#00A86B]">
+        Who We Help & Why
+      </h1>
 
       {/* ✅ Intro Text */}
       <p
-        className="text-lg text-center leading-relaxed mb-16 text-gray-600"
+        className="text-lg text-center leading-relaxed mb-16 text-gray-400"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -44,67 +46,69 @@ const AboutUs = () => {
 
       {/* ✅ 3 Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
-        {/* Mission */}
+
+        {/* ✅ Mission Card */}
         <div
           data-aos="zoom-in"
-          className="relative bg-white pt-14 p-6 shadow-md rounded-2xl min-h-[360px] border border-gray-200 hover:-translate-y-2 transition-all duration-300"
+          className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-200 hover:-translate-y-2 transition-all duration-300"
         >
-          <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-green-600 p-3 rounded-full shadow-lg">
-            <Target className="text-white" size={32} />
+          <img src={Mission} alt="Mission" className="w-full h-48 object-cover" />
+          <div className="p-6 min-h-[200px]">
+            <h2 className="text-xl font-bold mb-3 text-green-600">Our Mission</h2>
+            <p className="text-gray-600 text-base mb-4">
+              We help students and researchers write smarter with guided support, practical tools, and training for real-world academic needs.
+            </p>
+            <Link to="/learn-more/mission" className="text-green-600 underline text-sm">
+              Learn More
+            </Link>
           </div>
-          <h2 className="text-xl font-bold mb-3 text-green-600">Our Mission</h2>
-          <p className="text-gray-600 text-base mb-4">
-            We help medical students and researchers write smarter with guided support, practical tools, and training for real-world academic needs.
-          </p>
-          <Link to="/learn-more/mission" className="text-green-600 underline text-sm">Learn More</Link>
         </div>
 
-        {/* Vision */}
+        {/* ✅ Vision */}
         <div
           data-aos="zoom-in"
           data-aos-delay="100"
-          className="relative bg-white pt-14 p-6 shadow-md rounded-2xl min-h-[360px] border border-gray-200 hover:-translate-y-2 transition-all duration-300"
+          className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-200 hover:-translate-y-2 transition-all duration-300"
         >
-          <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-blue-600 p-3 rounded-full shadow-lg">
-            <Eye className="text-white" size={32} />
+          <img src={Vision} alt="Vision" className="w-full h-48 object-cover" />
+          <div className="p-6 min-h-[200px]">
+            <h2 className="text-xl font-bold mb-3 text-blue-600">Our Vision</h2>
+            <p className="text-gray-600 text-base mb-4">
+              To be the go-to platform for medical research writing and AI-powered academic guidance across the globe.
+            </p>
+            <Link to="/learn-more/vision" className="text-green-600 underline text-sm">
+              Learn More
+            </Link>
           </div>
-          <h2 className="text-xl font-bold mb-3 text-blue-600">Our Vision</h2>
-          <p className="text-gray-600 text-base mb-4">
-            To be the go-to platform for medical research writing and AI-powered academic guidance across the globe.
-          </p>
-          <Link to="/learn-more/vision" className="text-blue-600 underline text-sm">Learn More</Link>
         </div>
 
-        {/* Values */}
+        {/* ✅ Values */}
         <div
           data-aos="zoom-in"
           data-aos-delay="200"
-          className="relative bg-white pt-14 p-6 shadow-md rounded-2xl min-h-[360px] border border-gray-200 hover:-translate-y-2 transition-all duration-300"
+          className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-200 hover:-translate-y-2 transition-all duration-300"
         >
-          <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-yellow-500 p-3 rounded-full shadow-lg">
-            <Star className="text-white" size={32} />
+          <img src={Values} alt="Values" className="w-full h-48 object-cover" />
+          <div className="p-6 min-h-[280px]">
+            <h2 className="text-xl font-bold mb-3 text-yellow-500">Our Values</h2>
+            <p className="text-gray-600 text-base mb-4">
+              Clarity. Confidence. Credibility. We stand for ethical writing, efficient learning, and long-term skill-building.
+            </p>
+            <Link to="/learn-more/values" className="text-green-600 underline text-sm">
+              Learn More
+            </Link>
           </div>
-          <h2 className="text-xl font-bold mb-3 text-yellow-500">Our Values</h2>
-          <p className="text-gray-600 text-base mb-4">
-            Clarity. Confidence. Credibility. We stand for ethical writing, efficient learning, and long-term skill-building.
-          </p>
-          <Link to="/learn-more/values" className="text-yellow-500 underline text-sm">Learn More</Link>
         </div>
+
       </div>
 
       {/* ✅ CTA Button */}
       <div className="text-center" data-aos="fade-up" data-aos-delay="300">
         <button
           onClick={handleClick}
-          disabled={loading}
-          className="relative inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full bg-green-600 hover:bg-green-700 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 overflow-hidden"
+          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full bg-green-600 hover:bg-green-700 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
         >
-          {loading && (
-            <span className="absolute inset-0 bg-gradient-to-r from-green-700 via-green-600 to-green-700 animate-pulse opacity-60"></span>
-          )}
-          <span className="relative z-10">
-            {loading ? 'Processing…' : 'Take Action'}
-          </span>
+          Take Action
         </button>
       </div>
     </div>

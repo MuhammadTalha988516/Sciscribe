@@ -1,9 +1,9 @@
 import cbanner from "../../assets/course-banner.jpg";
-import cbootcamp from "../../assets/course-bootcamp.jpg";
- import cwriting from "../../assets/course-writing.jpg";
- import canalysis from "../../assets/course-analysis.jpg";
-import cai from "../../assets/course-ai.jpg";
-import cbio from "../../assets/course-bioinformatics.png";
+import BioInf from "../../assets/bioInformatics.jpg";
+import Research from "../../assets/Research.png";
+import DataAnalysis from "../../assets/Analysis.jpg";
+import AiandML from "../../assets/Ai.jpg";
+import Scientific from "../../assets/Science.jpg";
 
 export const landingPage = {
   headline: "Your Research, Our Expertise, Write, Analyze, Publish with Confidence",
@@ -180,35 +180,35 @@ export const coursesPage = {
       slug: "bioinformatics",
       description:
         "Understand key databases, tools, and workflows used in genomics, transcriptomics, and molecular biology research. Designed for beginners and life science researchers transitioning into computational biology.",
-      image: cbio,
+      image: BioInf,
     },
     {
       title: "Research Methodology Bootcamp",
       slug: "research-methods",
       description:
         "Master the essentials of study design, sampling, data collection, and literature review techniques. Ideal for thesis planning and academic research proposals.",
-      image: cbootcamp,
+      image: Research,
     },
     {
       title: "Scientific Writing for Publication",
       slug: "scientific-writing",
       description:
         "Learn to craft well-structured manuscripts, write compelling abstracts, and handle peer review feedback. Suited for researchers preparing papers for submission.",
-      image: cwriting,
+      image: Scientific,
     },
     {
       title: "Data Analysis with R and SPSS",
       slug: "data-analysis",
       description:
         "Gain hands-on experience in analyzing biological or social science data. Learn practical steps in data cleaning, visualization, and statistical testing using R and SPSS.",
-      image: canalysis,
+      image: DataAnalysis,
     },
     {
       title: "Introduction to AI & ML for Researchers",
       slug: "ai-ml",
       description:
         "Explore the basics of artificial intelligence and machine learning, with a focus on how these technologies are transforming biological and health data analysis. No prior coding required.",
-      image: cai,
+      image: AiandML,
     },
   ],
   flexibleLearning: [

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
@@ -129,7 +129,9 @@ const Navbar = () => {
           </Link>
 
           <Link to="/sign-up" onClick={() => setMenuOpen(false)}>
-            <button className="bg-[#00A86B] text-white px-4 py-2 rounded-full hover:bg-green-950">
+            <button 
+            onclick={()=> navigate}
+            className="bg-[#00A86B] text-white px-4 py-2 rounded-full hover:bg-green-950">
               Begin Your Journey
             </button>
           </Link>

@@ -5,7 +5,7 @@ const ServiceCTA = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm text-white rounded-2xl p-8 md:p-12 max-w-3xl mx-auto text-center border border-transparent hover:border-[#00A86B] transition">
+    <div className="bg-gray-700 text-white rounded-2xl p-8 md:p-12 max-w-3xl mx-auto text-center border border-white/10">
       <h2 className="text-lg md:text-xl font-semibold mb-4">
         Cannot find what you’re looking for?
       </h2>

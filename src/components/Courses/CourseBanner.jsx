@@ -6,10 +6,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 const CourseBanner = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init({ duration: 800, easing: "ease-in-out", once: false });
   }, []);
@@ -26,13 +31,13 @@ const CourseBanner = () => {
 
       {/* Heading */}
       <div
-        className="relative z-10 text-black text-center mb-16"
+        className="relative z-10 text-green-600 text-center mb-16"
         data-aos="fade-down"
       >
         <h2 className="text-3xl md:text-5xl font-bold">
           {coursesPage.intro.heading}
         </h2>
-        <p className="text-lg md:text-xl mt-4">
+        <p className="text-lg md:text-xl text-gray-400 mt-4">
           {coursesPage.intro.description}
         </p>
       </div>
@@ -68,7 +73,9 @@ const CourseBanner = () => {
                   <p className="text-white/90 text-sm mb-4 drop-shadow">
                     {course.description}
                   </p>
-                  <button className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 transition">
+                  <button 
+                  onClick={() => navigate("/contact-us")} 
+                  className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 transition">
                     Learn More
                   </button>
                 </div>

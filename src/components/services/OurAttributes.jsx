@@ -42,7 +42,7 @@ const attributes = [
 
 const OurAttributes = () => {
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-gray-900">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold mb-4 text-[#00A86B]">What Sets Us Apart</h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-16">
@@ -55,13 +55,13 @@ const OurAttributes = () => {
         {attributes.map((attr, index) => (
           <div
             key={index}
-            className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-transparent hover:border-[#00A86B] transition"
+            className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-[#00A86B] transition"
           >
             <div className="flex items-center gap-2 mb-3">
               {attr.icon}
               <h3 className="text-lg font-semibold text-[#00A86B]">{attr.title}</h3>
             </div>
-            <p className="text-gray-200 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               {attr.description}
             </p>
           </div>

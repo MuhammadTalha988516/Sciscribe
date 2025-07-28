@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import { useNavigate } from "react-router-dom";
 import {
   FileText,
   Brain,
@@ -59,35 +59,47 @@ const services = [
 ];
 
 const OurServices = () => {
-  const navigate = useNavigate(); // ✅ Hook
+  const navigate = useNavigate();
 
   return (
-    <section className="py-20 px-4">
+    <section className="min-h-screen w-full bg-gray-900 py-12 px-4 text-white">
+      {/* ✅ Header */}
+      <div className="max-w-4xl mx-auto text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#00A86B] mb-4">
+          Our Services
+        </h1>
+        <p className="text-gray-300 text-lg md:text-xl">
+          Explore our specialized services and find the perfect support for your research journey.
+        </p>
+      </div>
+
+      {/* ✅ Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <div
             key={index}
-            className="group relative p-6 text-white rounded-xl overflow-hidden transition duration-500 border border-transparent hover:border-[#00A86B]"
+            onClick={() => navigate("/contact-us")}
+            className="group relative p-6 flex flex-col justify-between bg-gray-800 rounded-xl h-full overflow-hidden transition duration-500 border border-transparent hover:border-[#00A86B] cursor-pointer"
           >
-            <div className="flex items-center justify-start mb-4">
-              {service.icon}
+            <div>
+              <div className="flex items-center justify-start mb-4">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-[#00A86B]">
+                {service.title}
+              </h3>
+              <p className="text-gray-200 text-sm mb-4">
+                {service.description}
+              </p>
             </div>
 
-            {/* Title always green */}
-            <h3 className="text-xl font-semibold mb-2 text-[#00A86B]">
-              {service.title}
-            </h3>
-
-            {/* Improved description */}
-            <p className="text-gray-200 text-sm mb-4">
-              {service.description}
-            </p>
-
-            {/* Extra description + button only on hover */}
             <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
               <p className="text-gray-300 text-sm mb-4">{service.extra}</p>
               <button
-                onClick={() => navigate("/contact-us")} // ✅ OnClick navigate
+                onClick={(e) => {
+                  e.stopPropagation(); // ⏸️ prevent parent div click
+                  navigate("/contact-us");
+                }}
                 className="bg-[#00A86B] text-white px-4 py-2 rounded-full text-sm hover:bg-green-700 transition"
               >
                 Inquire Now

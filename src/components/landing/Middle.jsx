@@ -39,7 +39,7 @@ const Middle = () => {
     <section className="py-20 px-4 bg-gray-900 text-white overflow-hidden">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-12 text-center">
-        <h2 className="text-4xl font-bold mb-2">Why Choose Us?</h2>
+        <h2 className="text-4xl font-bold mb-2 text-green-600">Why Choose Us?</h2>
         <p className="text-gray-300 text-lg max-w-xl mx-auto">
           Made for students, researchers, and professionals who want clarity, speed, and quality.
         </p>
