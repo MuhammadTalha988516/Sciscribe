@@ -87,7 +87,7 @@ const OurServices = () => {
             <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
               <p className="text-gray-300 text-sm mb-4">{service.extra}</p>
               <button
-                onClick={() => navigate("/contact-us")} // ✅ OnClick navigate
+                onClick={() => navigate("/contact-us")} 
                 className="bg-[#00A86B] text-white px-4 py-2 rounded-full text-sm hover:bg-green-700 transition"
               >
                 Inquire Now
