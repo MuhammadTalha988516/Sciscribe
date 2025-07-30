@@ -4,27 +4,27 @@ const cards = [
   {
     title: "Step-by-step thesis help",
     desc: "Clear guidance from your first draft to final formatting.",
-    bg: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+    bg: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format",
   },
   {
     title: "Tailored for students",
     desc: "Examples and tools that actually match your field.",
-    bg: "https://images.unsplash.com/photo-1543295523-78c9bbdba65c",
+    bg: "https://images.unsplash.com/photo-1543295523-78c9bbdba65c?w=800&auto=format",
   },
   {
     title: "Plagiarism-safe writing",
     desc: "Learn how to write with confidence and integrity.",
-    bg: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173",
+    bg: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format",
   },
   {
     title: "Hands-on training",
     desc: "Practical courses in ChatGPT, data analysis, and research methods.",
-    bg: "https://images.unsplash.com/photo-1544717305-2782549b5136",
+    bg: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format",
   },
   {
     title: "Made for tight schedules",
     desc: "Learn fast, write smart, and finish without the overwhelm.",
-    bg: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a",
+    bg: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?w=800&auto=format",
   },
 ];
 
@@ -35,9 +35,9 @@ const Middle = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="py-20 px-4 bg-gray-900 text-white overflow-hidden">
+    <section className="py-20 px-4 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto mb-12 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-green-600">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-green-500">
           Why Choose Us?
         </h2>
         <p className="text-gray-300 text-base md:text-lg max-w-xl mx-auto">
@@ -45,17 +45,21 @@ const Middle = () => {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="hidden md:flex relative h-[340px] justify-center items-center overflow-x-auto">
-        <div className="relative" style={{ height: "340px", width: "100%", maxWidth: "1200px" }}>
+     
+      <div className="hidden md:flex justify-center">
+        <div
+          className="relative h-[340px]"
+          style={{
+            width: CARD_WIDTH * cards.length + (EXPANDED_WIDTH - CARD_WIDTH),
+            transition: "width 0.3s ease",
+          }}
+        >
           {cards.map((card, index) => {
             const isHovered = hoveredIndex === index;
+
             const leftShift = cards.reduce((acc, _, i) => {
               if (i < index) {
-                return (
-                  acc +
-                  (hoveredIndex === i ? EXPANDED_WIDTH : CARD_WIDTH)
-                );
+                return acc + (hoveredIndex === i ? EXPANDED_WIDTH : CARD_WIDTH);
               }
               return acc;
             }, 0);
@@ -67,20 +71,24 @@ const Middle = () => {
                 key={index}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="absolute top-0 transition-all duration-500 ease-in-out rounded-xl overflow-hidden shadow-xl cursor-pointer"
+                className="absolute top-0 transition-all duration-700 ease-in-out rounded-xl overflow-hidden shadow-xl cursor-pointer"
                 style={{
                   width: `${width}px`,
-                  height: "400px",
+                  height: "340px",
                   left: `${leftShift}px`,
                   zIndex: isHovered ? 10 : index,
+                  willChange: "transform, opacity",
                 }}
               >
                 <div className="absolute inset-0">
                   <div
                     className={`w-full h-full bg-cover bg-center transition-all duration-700 ${
-                      isHovered ? "blur-0 scale-105" : "blur-sm"
+                      isHovered ? "blur-0 scale-105" : "blur-sm scale-100"
                     }`}
-                    style={{ backgroundImage: `url(${card.bg})` }}
+                    style={{
+                      backgroundImage: `url(${card.bg})`,
+                      transform: "translateZ(0)",
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/40" />
                 </div>
@@ -102,13 +110,10 @@ const Middle = () => {
         </div>
       </div>
 
-      {/* ✅ Mobile version: stacked */}
-      <div className="md:hidden grid gap-6">
+      
+      <div className="md:hidden grid gap-6 mt-8">
         {cards.map((card, index) => (
-          <div
-            key={index}
-            className="rounded-xl overflow-hidden shadow-xl"
-          >
+          <div key={index} className="rounded-xl overflow-hidden shadow-xl">
             <div
               className="w-full h-48 bg-cover bg-center"
               style={{ backgroundImage: `url(${card.bg})` }}

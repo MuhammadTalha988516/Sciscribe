@@ -27,10 +27,10 @@ const ResearchCourses = () => {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
               />
 
-              {/* ✅ Dark overlay for readability */}
+              {/*  Dark overlay for readability */}
               <div className="absolute inset-0 bg-black/40"></div>
 
-              {/* ✅ Content */}
+              {/*  Content */}
               <div className="relative z-10 flex flex-col h-full p-6">
                 <h3 className="text-xl font-bold mb-2">{course.title}</h3>
 

@@ -25,7 +25,6 @@ const Homepage = () => {
         <Middle />
         <SuccessSection />
         <ResearchSkills />
-        {/* <Work /> */}
         <FAQ />
         <CTASection />
       </div>

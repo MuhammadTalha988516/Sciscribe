@@ -8,7 +8,7 @@ import { coursesPage } from "../data/Data";
 const Course = () => {
   const { slug } = useParams();
 
-  // ✅ If a slug exists in the URL, show the single course detail
+  //  If a slug exists in the URL, show the single course detail
   if (slug) {
     const course = coursesPage.courses.find((c) => c.slug === slug);
 
@@ -31,7 +31,7 @@ const Course = () => {
     );
   }
 
-  // ✅ If no slug, show full courses list page with banner + swiper
+  //  If no slug, show full courses list page with banner + swiper
   return (
     <>
       <TopBanner 
