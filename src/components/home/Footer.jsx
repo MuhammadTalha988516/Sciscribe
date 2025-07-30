@@ -10,23 +10,13 @@ const Footer = () => {
         <div className="col-span-2">
           <img src={Logo} alt="Logo" />
           <p className="mt-4 text-gray-400">
-            SciScribe supports medical students and researchers with thesis
-            writing, research paper help, and practical training. We make
-            academic writing simpler, faster, and more confident.
+           SciScribe empowers researchers and students across disciplines with expert support in scientific writing, publication guidance, and practical research training. We simplify the research process, making academic writing clearer, faster, and more impactful.
           </p>
           <div className="flex mt-4 space-x-4 text-xl">
             <a href="#"><FaFacebook /></a>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaTwitter /></a>
           </div>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-2">Services</h3>
-          <ul className="text-gray-400 space-y-1">
-            <li><Link to="/services/research">Research Paper</Link></li>
-            <li><Link to="/services/thesis">Thesis Paper</Link></li>
-          </ul>
         </div>
 
         <div>
@@ -37,19 +27,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
-          <h2 className="font-extrabold mb-2">Subscribe to our Newsletter</h2>
-          <form className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="px-3 py-2 rounded bg-white text-black w-full sm:w-auto"
-            />
-            <button className="bg-[#00A86B] hover:bg-green-700 text-white px-4 py-2 rounded-lg">
-              Subscribe
-            </button>
-          </form>
-        </div>
+      
       </div>
 
       <div className="mt-6 pt-4 px-4 text-center text-gray-500 text-sm">

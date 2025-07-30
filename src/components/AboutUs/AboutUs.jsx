@@ -32,10 +32,10 @@ const AboutUs = () => {
 
         {/* ✅ Intro Text */}
         <p className="text-base sm:text-lg md:text-xl text-center text-gray-500 leading-relaxed max-w-3xl mx-auto mb-16">
-          SciScribe exists to help medical students and researchers write with clarity, confidence, and the right support.
-          Whether it’s your thesis, a research paper, or mastering AI tools — we break it down step by step.
+          At SciScribe, we support students, early-career researchers, and academics across disciplines in developing clear, confident, and credible research writing. Whether you're working on a research article, academic report, or learning to integrate AI tools into your workflow, we guide you step by step.
+
           <br /><br />
-          Built for busy schedules. Designed for real academic work. Focused on getting you from stuck to submitted — with skills that stay with you.
+          Built to fit demanding academic schedules. Grounded in real research practices. Our goal? To help you move from overwhelmed to accomplished, with skills that last far beyond submission.
         </p>
 
         {/* ✅ Cards */}
@@ -51,7 +51,7 @@ const AboutUs = () => {
             {
               img: Vision,
               title: "Our Vision",
-              text: "To be the go-to platform for medical research writing and AI-powered academic guidance across the globe.",
+              text: "To become the leading global platform for research writing support and AI-powered academic guidance — empowering researchers and students across all disciplines to produce impactful, ethical, and high-quality work.",
               link: "/learn-more/vision",
               color: "text-blue-600",
             },

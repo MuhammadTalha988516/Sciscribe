@@ -17,14 +17,11 @@ const SuccessSection = () => {
       {/* ✅ Centered content */}
       <div className="relative z-20 max-w-5xl mx-auto text-center px-4">
         <h1 className="text-[#00A86B] font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
-          Powering Your Success
+          Powering Your Research Success
         </h1>
 
         <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed mb-10">
-          Writing a thesis or research paper can feel overwhelming — from organizing your thoughts to hitting the
-          right academic tone, or simply meeting tight deadlines. We’re here to make it easier with clear, step-by-step
-          support tailored for medical students and researchers. From your first draft to the final polish, we help you
-          write confidently and finish strong.
+         Writing a research paper or dissertation can be challenging, from structuring your ideas and maintaining academic integrity to meeting deadlines. At SciScribe, we provide clear, step-by-step support tailored for students and researchers across disciplines. From your initial draft to final revisions, we help you write with clarity, confidence, and credibility.
         </p>
       </div>
     </section>

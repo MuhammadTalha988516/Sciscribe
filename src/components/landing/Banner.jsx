@@ -19,17 +19,12 @@ const Banner = () => {
         </h4>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-4">
-          Write Your{' '}
-          <span className="bg-green-500 px-2 rounded inline-block">
-            Thesis
-          </span>{' '}
-          <br className="hidden md:block" />
-          with Clarity, Confidence, <br className="hidden md:block" /> & the Right Guidance.
+          Write 
+         with Clarity, Confidence, and Integrity 
         </h1>
 
         <p className="text-gray-200 text-lg md:text-xl mb-6">
-          Step-by-step guidance and practical training for students & researchers — from thesis writing to data skills.
-        </p>
+        Expert guidance and practical training tailored for students and researchers. From scientific writing to data analysis skills, we support your research journey every step of the way.        </p>
       </div>
     </section>
   );
