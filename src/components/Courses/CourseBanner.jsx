@@ -6,15 +6,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 
-
-
 const CourseBanner = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ duration: 800, easing: "ease-in-out", once: false });
   }, []);
@@ -26,10 +24,8 @@ const CourseBanner = () => {
         backgroundImage: `url(${coursesPage.intro.bannerImage})`,
       }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-white bg-opacity-50 z-0"></div>
 
-      {/* Heading */}
       <div
         className="relative z-10 text-green-600 text-center mb-16"
         data-aos="fade-down"
@@ -42,7 +38,6 @@ const CourseBanner = () => {
         </p>
       </div>
 
-      {/* Swiper Slider */}
       <div className="relative z-10" data-aos="zoom-in">
         <Swiper
           modules={[Navigation, Pagination]}
@@ -50,6 +45,7 @@ const CourseBanner = () => {
           navigation
           pagination={{ clickable: true }}
           breakpoints={{
+            0: { slidesPerView: 1 },
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -57,15 +53,16 @@ const CourseBanner = () => {
         >
           {coursesPage.courses.map((course, index) => (
             <SwiperSlide key={index}>
-              <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition duration-500 hover:shadow-2xl hover:scale-105">
-                {/* Course Image */}
+              <div
+                className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition duration-500 hover:shadow-2xl hover:scale-105"
+                onClick={() => navigate(`/courses/${course.slug}`)}
+              >
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75 group-hover:blur-sm"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
                 />
 
-                {/* Hover Content */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center px-4 transition-opacity duration-500">
                   <h3 className="text-2xl font-bold text-white drop-shadow mb-2">
                     {course.title}
@@ -73,9 +70,13 @@ const CourseBanner = () => {
                   <p className="text-white/90 text-sm mb-4 drop-shadow">
                     {course.description}
                   </p>
-                  <button 
-                  onClick={() => navigate("/contact-us")} 
-                  className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 transition">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.location.href = `/courses/${course.slug}`;
+                    }}
+                    className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 transition"
+                  >
                     Learn More
                   </button>
                 </div>
@@ -85,9 +86,8 @@ const CourseBanner = () => {
         </Swiper>
       </div>
 
-      {/* Footer Text */}
       <div
-        className="relative z-10 mt-12 text-center text-white"
+        className="relative z-10 mt-12 text-center text-gray-800"
         data-aos="fade-up"
       >
         <p className="text-sm">{coursesPage.flexibleLearning.join(" • ")}</p>

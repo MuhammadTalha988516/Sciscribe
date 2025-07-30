@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  UserCheck,
-  Clock,
-  ShieldCheck,
-  Lock,
-  Laptop2,
-} from "lucide-react"; // Make sure this is installed
+import { UserCheck, Clock, ShieldCheck, Lock, Laptop2 } from "lucide-react";
 
 const highlights = [
   {
@@ -37,9 +31,9 @@ const highlights = [
 
 const WhatSetsUsApart = () => {
   return (
-    <section className="bg-[#C6F2E3] py-16 px-4 md:px-8 mb-6">
+    <section className="bg-[#C6F2E3] py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">
           What Sets Us Apart?
         </h2>
 

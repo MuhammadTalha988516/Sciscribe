@@ -27,31 +27,22 @@ const faqData = [
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
-    <section className="py-16 px-4 bg-gray-800 text-[#00A86B]">
-      <h2 className="text-3xl font-extrabold text-center mb-10">FAQ</h2>
+    <section className="w-full bg-gray-900 text-[#00A86B] py-16 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">FAQ</h2>
 
-      <div className="max-w-2xl mx-auto space-y-[3px]">
-        {faqData.map((item, index) => (
-          <div
-            key={index}
-            className="bg-gray-200 border border-gray-300 shadow-[#00000040] shadow-xl rounded-none transition-all duration-300"
-          >
+      <div className="max-w-2xl mx-auto space-y-4">
+        {faqData.map((item, i) => (
+          <div key={i} className="bg-white border border-gray-200 rounded overflow-hidden">
             <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center px-6 py-3 text-left font-medium text-gray-800"
+              onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+              className="w-full flex justify-between items-center px-4 py-4 text-left text-base font-medium text-gray-800"
             >
               {item.question}
-              <span className="ml-4 text-gray-600">
-                {activeIndex === index ? <FaMinus /> : <FaPlus />}
-              </span>
+              <span>{activeIndex === i ? <FaMinus /> : <FaPlus />}</span>
             </button>
-            {activeIndex === index && (
-              <div className="px-6 pb-4 text-sm text-gray-600">
+            {activeIndex === i && (
+              <div className="px-4 pb-4 text-gray-600 text-sm">
                 {item.answer}
               </div>
             )}

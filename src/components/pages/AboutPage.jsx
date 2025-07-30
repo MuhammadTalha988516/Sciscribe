@@ -4,24 +4,8 @@ import FAQ from '../landing/FAQ';
 
 const AboutPage = () => {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
-      {/* ✅ Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/about-bg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* ✅ Optional dark overlay */}
-      <div className="absolute inset-0 bg-white opacity-50 z-10"></div>
-
-      {/* ✅ Content */}
-      <main className="relative z-20">
+    <div className="relative w-full min-h-screen overflow-x-hidden bg-white">
+      <main className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-16">
         <AboutUs />
         <FAQ />
       </main>

@@ -1,12 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CourseBanner from "../Courses/CourseBanner";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-//  Import TopBanner
-import TopBanner from "../Courses/TopBanner";
 
 const CoursePage = ({ pageData }) => {
   const { slug } = useParams();
@@ -36,40 +32,28 @@ const CoursePage = ({ pageData }) => {
 
   return (
     <div className="pt-0 bg-white text-black min-h-screen">
-      {/*  Common Top Banner */}
-      
-
       {filteredCourses.map((course) => (
         <div key={course.slug}>
-          {/*  Hero Section */}
-          <section
-  className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center px-4 md:px-16"
-  data-aos="fade-down"
->
-  <div className="absolute inset-0">
-    <img
-      src={course.image}
-      alt={course.title}
-      className="w-full h-full object-cover z-0 brightness-50"
-    />
-    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
-  </div>
+          <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center px-4 md:px-16" data-aos="fade-down">
+            <div className="absolute inset-0">
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-full object-cover brightness-50"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
+            </div>
 
-  <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-    <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow">
-      {course.title}
-    </h1>
-    <p className="text-lg md:text-xl drop-shadow">
-      {course.description}
-    </p>
-    {/* <button className="mt-6 bg-green-500 text-black font-semibold px-6 py-3 rounded-full hover:bg-green-400 shadow transition">
-      Register Now
-    </button> */}
-  </div>
-</section>
+            <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow">
+                {course.title}
+              </h1>
+              <p className="text-lg md:text-xl drop-shadow">
+                {course.description}
+              </p>
+            </div>
+          </section>
 
-
-          {/*  Course Detail Section */}
           <section
             ref={sectionRefs[course.slug]}
             className="max-w-4xl mx-auto px-4 py-16"
@@ -97,19 +81,19 @@ const CoursePage = ({ pageData }) => {
                   </div>
                 )}
 
-                <button className="mt-8 bg-green-600 hover:bg-green-500 text-black px-6 py-3 rounded-full shadow-md transition w-max">
+                <button
+                  onClick={() => window.location.href = "/contact-us"}
+                  className="mt-8 bg-green-600 hover:bg-green-500 text-black px-6 py-3 rounded-full shadow-md transition w-max"
+                >
                   Register Now
                 </button>
               </div>
 
-              <div
-                className="flex items-center justify-center"
-                data-aos="zoom-in"
-              >
+              <div className="flex items-center justify-center" data-aos="zoom-in">
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="rounded-xl  shadow-2xl w-full max-w-2xl max-h-full object-cover border-4 border-white/10"
+                  className="rounded-xl shadow-2xl w-full max-w-2xl max-h-full object-cover border-4 border-white/10"
                 />
               </div>
             </div>
@@ -117,7 +101,6 @@ const CoursePage = ({ pageData }) => {
         </div>
       ))}
 
-    
       <CourseBanner />
     </div>
   );

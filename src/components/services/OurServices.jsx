@@ -23,8 +23,7 @@ const services = [
     title: "Scientific Consultancy",
     description:
       "Get expert advice on study design, methodology, and publication strategies. We help researchers plan, develop protocols, and achieve publication goals efficiently.",
-    extra:
-      "One-on-one research planning, protocols, and publication strategy advice.",
+    extra: "One-on-one research planning, protocols, and publication strategy advice.",
   },
   {
     icon: <BarChart3 className="text-pink-400 w-8 h-8" />,
@@ -62,19 +61,17 @@ const OurServices = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-screen w-full bg-gray-900 py-12 px-4 text-white">
-      {/* ✅ Header */}
-      <div className="max-w-4xl mx-auto text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#00A86B] mb-4">
+    <section className="w-full bg-gray-900 py-12 px-4 text-white">
+      <div className="max-w-4xl mx-auto text-center mb-12 px-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-[#00A86B] mb-4">
           Our Services
         </h1>
-        <p className="text-gray-300 text-lg md:text-xl">
+        <p className="text-gray-300 text-base md:text-lg">
           Explore our specialized services and find the perfect support for your research journey.
         </p>
       </div>
 
-      {/* ✅ Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
         {services.map((service, index) => (
           <div
             key={index}
@@ -93,14 +90,14 @@ const OurServices = () => {
               </p>
             </div>
 
-            <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
+            <div className="opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
               <p className="text-gray-300 text-sm mb-4">{service.extra}</p>
               <button
                 onClick={(e) => {
-                  e.stopPropagation(); // ⏸️ prevent parent div click
+                  e.stopPropagation();
                   navigate("/contact-us");
                 }}
-                className="bg-[#00A86B] text-white px-4 py-2 rounded-full text-sm hover:bg-green-700 transition"
+                className="bg-[#00A86B] text-white px-4 py-2 rounded-full text-sm hover:bg-emerald-700 transition"
               >
                 Inquire Now
               </button>

@@ -9,20 +9,19 @@ import ResearchSkills from "../landing/ResearchSkills";
 // import Work from "../landing/Work";
 import CTASection from "../home/CTASection"; // adjust path if needed
 import BannerVideo from "../landing/BannerVideo";
-import OurServices from "../landing/OurServices"; 
-
+import OurServices from "../landing/OurServices";
 
 const Homepage = () => {
   return (
-    <div className="relative w-full ">
-  
+    <div className="relative w-full">
+      {/* ✅ Optional background fallback */}
       <div className="bg-white" />
 
-      {/* ✅ Home sections over video */}
-      <div className="relative z-20 flex flex-col space-y-8">
-        <BannerVideo/>
+      {/* ✅ Home sections stacked over video */}
+      <div className="relative z-20 flex flex-col space-y-12 md:space-y-20">
+        <BannerVideo />
         <Banner />
-        <OurServices/>
+        <OurServices />
         <Middle />
         <SuccessSection />
         <ResearchSkills />

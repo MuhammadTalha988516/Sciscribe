@@ -15,22 +15,17 @@ const FloatingWhatsapp = () => {
 
   return (
     <a
-      href="https://wa.me/919999999999" 
+      href="https://wa.me/919999999999"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50"
     >
-      {/* Outer Circle Effect */}
       <span className="absolute inset-0 rounded-full bg-green-600/20 animate-ping"></span>
 
-      {/* WhatsApp Button */}
       <div
-        className={`relative z-10
-          p-4 rounded-full transition-all duration-300
-          text-white bg-green-600 hover:bg-green-700
-          shadow-lg hover:shadow-xl
-          ${scrolled ? "scale-110 shadow-2xl" : "scale-100"}
-        `}
+        className={`relative z-10 p-4 rounded-full text-white bg-green-600 hover:bg-green-800 shadow-lg transition-all duration-300 ${
+          scrolled ? "scale-110 shadow-3xl" : "scale-100"
+        }`}
       >
         <FaWhatsapp size={30} />
       </div>
