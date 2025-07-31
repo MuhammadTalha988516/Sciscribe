@@ -10,14 +10,13 @@ const ContactForm = () => {
     course: "",
     subject: "",
     message: "",
-    consent: false,
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value,
     });
   };
 
@@ -25,24 +24,17 @@ const ContactForm = () => {
     e.preventDefault();
 
     const data = new FormData();
-    data.append("entry.116249013", formData.firstName);
-    data.append("entry.615657035", formData.lastName);
-    data.append("entry.237516233", formData.email);
-    data.append("entry.1035996886", formData.phone);
-    data.append("entry.479249673", formData.service);
-    data.append("entry.1249032234", formData.course);
-    data.append("entry.905983228", formData.subject);
-    data.append("entry.317385170", formData.message);
-
-    if (formData.consent) {
-      data.append(
-        "entry.1502392172",
-        "I consent to SciScribe storing and using my information for communication purposes."
-      );
-    }
+    data.append("entry.253597926", formData.firstName);
+    data.append("entry.184990195", formData.lastName);
+    data.append("entry.1579246839", formData.email);
+    data.append("entry.1997420567", formData.phone);
+    data.append("entry.814708344", formData.service);
+    data.append("entry.577563919", formData.course);
+    data.append("entry.1330388150", formData.subject);
+    data.append("entry.33231570", formData.message);
 
     fetch(
-      "https://docs.google.com/forms/d/e/1FAIpQLSdpzYJp0aSZGwy2XZ6crPs2bAH4Mo4Rc06ciY0g5fDYyj3hXw/formResponse",
+      "https://docs.google.com/forms/d/e/1FAIpQLSc7Hotk6OPVjEFICMVuPl20hLJqKQTHYocXXVkpljIGp6bzIw/formResponse",
       {
         method: "POST",
         mode: "no-cors",
@@ -50,12 +42,12 @@ const ContactForm = () => {
       }
     )
       .then(() => {
-        alert("✅ Your form has been submitted!");
+        alert(" Your information has been submitted!");
         window.scrollTo(0, 0);
         window.location.reload();
       })
       .catch(() => {
-        alert("❌ There was a problem submitting the form.");
+        alert(" There was a problem submitting the form.");
       });
   };
 
@@ -184,7 +176,7 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className="bg-white text-black py-3 px-6 rounded-full w-full hover:bg-green-400 transition"
+        className="bg-white text-black py-3 px-6 rounded-full w-full hover:bg-black hover:text-white transition"
       >
         Request Free Quote
       </button>

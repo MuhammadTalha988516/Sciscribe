@@ -5,14 +5,19 @@ import "aos/dist/aos.css";
 import ContactInfo from "../ContactUs/ContactInfo";
 import ContactForm from "../ContactUs/ContactForm";
 import Build from "../../assets/Contact.jpg";
+import SEO from "../../components/SEO";
 
 const ContactPage = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
+  AOS.init({ duration: 1000 });
+  window.scrollTo(0, 0); 
+}, []);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
+      <SEO 
+      title="ContactPage" 
+      description="This is the ContactPage for Sciscribe"
+    />
       <img
         src={Build}
         alt="Building"

@@ -15,7 +15,7 @@ const ServiceCTA = () => {
       </p>
       <button
         onClick={() => {
-          // ✅ Force full page reload to show the page from top
+          // Force full page reload to show the page from top
           window.location.href = "/contact-us";
         }}
         className="bg-[#00A86B] hover:bg-emerald-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300"

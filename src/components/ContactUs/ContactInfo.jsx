@@ -17,8 +17,8 @@ const ContactInfo = () => {
             Email
           </h3>
           <div className="mt-2 space-y-1 text-base sm:text-lg text-gray-300">
-            <p>contact@sciscribesolutions.com</p>
-            <p>support@sciscribesolutions.com</p>
+            <p>contact@sciscribe.net</p>
+            
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ const ContactInfo = () => {
             WhatsApp
           </h3>
           <div className="mt-2 text-base sm:text-lg text-gray-300">
-            <p>+92 3234554777</p>
+            <p>+92 319 9810250</p>
           </div>
         </div>
       </div>

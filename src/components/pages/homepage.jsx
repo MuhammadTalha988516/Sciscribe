@@ -10,15 +10,19 @@ import ResearchSkills from "../landing/ResearchSkills";
 import CTASection from "../home/CTASection"; // adjust path if needed
 import BannerVideo from "../landing/BannerVideo";
 import OurServices from "../landing/OurServices";
-
+import SEO from "../../components/SEO";
 const Homepage = () => {
   return (
     <div className="relative w-full">
-      {/* ✅ Optional background fallback */}
+     
       <div className="bg-white" />
 
-      {/* ✅ Home sections stacked over video */}
+      {/* Home sections stacked over video */}
       <div className="relative z-20 flex flex-col space-y-12 md:space-y-20">
+        <SEO 
+      title="HomePage" 
+      description="This is the hompage for Sciscribe"
+    />
         <BannerVideo />
         <Banner />
         <OurServices />

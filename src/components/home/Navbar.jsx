@@ -6,20 +6,20 @@ import Logo from "../../assets/Logo.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
-  const navigate = useNavigate(); // ✅ make sure navigate is defined
+  const navigate = useNavigate(); 
 
   return (
     <>
-      {/* ✅ Top Navbar */}
+      {/*  Top Navbar */}
       <div className="w-full h-[69px] bg-black/50 backdrop-blur-sm fixed top-0 left-0 z-50 flex items-center px-4 md:px-8 shadow">
-        {/* ✅ Logo */}
+        {/* Logo */}
         <div>
           <Link to="/">
             <img src={Logo} alt="Logo" className="h-auto max-h-10 w-auto" />
           </Link>
         </div>
 
-        {/* ✅ Desktop Nav */}
+        {/*  Desktop Nav */}
         <div className="hidden md:flex justify-center items-center w-full text-white text-base font-medium ml-[120px] mr-4">
           <div className="flex space-x-8 mx-auto">
             <Link
@@ -42,7 +42,7 @@ const Navbar = () => {
               Services
             </Link>
 
-            {/* ✅ Desktop Courses Dropdown */}
+            {/* Desktop Courses Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setCoursesDropdownOpen(true)}
@@ -115,7 +115,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ✅ Mobile Toggle */}
+        {/*  Mobile Toggle */}
         <div className="md:hidden text-white ml-auto z-50">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -123,7 +123,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* ✅ Mobile Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#212D35] w-full fixed top-[69px] left-0 z-50 flex flex-col items-center gap-4 py-6 px-4 text-white text-sm font-medium shadow overflow-y-auto max-h-screen overflow-x-hidden">
           <Link

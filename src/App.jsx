@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// ✅ Pages
+// Pages
 import Homepage from "./components/pages/homepage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import LearnMore from "./components/AboutUs/LearnMore";
@@ -10,21 +10,22 @@ import CourseBanner from "./components/Courses/CourseBanner";
 import ContactPage from "./components/pages/ContactPage";
 import Services from "./components/pages/Services";
 
-// ✅ Common Components
+// Common Components
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
 import FloatingWhatsapp from "./components/home/FloatingWhatsapp";
-import BannerVideo from "./components/landing/BannerVideo"; // ✅ import your BannerVideo
-
+import BannerVideo from "./components/landing/BannerVideo"; 
+import { HelmetProvider } from 'react-helmet-async';
 const App = () => {
   return (
+    <HelmetProvider>
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <FloatingWhatsapp />
 
         <Routes>
-          {/* ✅ Home */}
+          {/*Home */}
           <Route
             path="/"
             element={
@@ -35,22 +36,22 @@ const App = () => {
             }
           />
 
-          {/* ✅ About */}
+          {/*About */}
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/learn-more/:section" element={<LearnMore />} />
 
-          {/* ✅ Courses */}
+          {/* Courses */}
           <Route path="/courses" element={<CourseBanner />} />
           <Route path="/courses/all" element={<Course />} />
           <Route path="/courses/:slug" element={<Course />} />
 
-          {/* ✅ Services */}
+          {/*Services */}
           <Route path="/services" element={<Services />} />
 
-          {/* ✅ Contact */}
+          {/*Contact */}
           <Route path="/contact-us" element={<ContactPage />} />
 
-          {/* ✅ 404 */}
+          {/*404 */}
           <Route
             path="*"
             element={
@@ -64,6 +65,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+    </HelmetProvider>
   );
 };
 

@@ -4,6 +4,7 @@ import CourseBanner from "../Courses/CourseBanner";
 import CoursePage from "../Courses/CoursePage";
 import TopBanner from "../Courses/TopBanner";
 import { coursesPage } from "../data/Data";
+import SEO from "../../components/SEO";
 
 const Course = () => {
   const { slug } = useParams();
@@ -21,6 +22,11 @@ const Course = () => {
     }
 
     return (
+      <>
+      <SEO 
+      title="Courses" 
+      description="This is the Courses for Sciscribe"
+    />
       <CoursePage
         pageData={{
           intro: coursesPage.intro,
@@ -28,10 +34,11 @@ const Course = () => {
           flexibleLearning: coursesPage.flexibleLearning,
         }}
       />
+      </>
     );
   }
 
-  //  If no slug, show full courses list page with banner + swiper
+  
   return (
     <>
       <TopBanner 
