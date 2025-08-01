@@ -16,8 +16,13 @@ const ResearchCourses = () => {
             <div
               key={index}
               className="relative overflow-hidden group h-80 rounded-lg shadow-lg cursor-pointer"
-              onClick={() => {
-                window.location.href = `/courses/${course.slug}`;
+              onClick={() => window.location.assign(`/courses/${course.slug}`)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  window.location.assign(`/courses/${course.slug}`);
+                }
               }}
             >
               {/* ✅ Background image */}
@@ -29,7 +34,7 @@ const ResearchCourses = () => {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
               />
 
-              {/* ✅ Dark overlay for readability */}
+              {/* ✅ Dark overlay */}
               <div className="absolute inset-0 bg-black/40"></div>
 
               {/* ✅ Content */}
@@ -42,7 +47,9 @@ const ResearchCourses = () => {
                   </p>
                 </div>
 
-                <div className="mt-auto self-end overflow-hidden">
+                <div
+                  className="mt-auto self-end overflow-hidden"
+                >
                   <span className="relative inline-block font-semibold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
                     <span className="border-b-2 border-[#00A86B]">Explore</span>
                     <span className="ml-2 text-[#00A86B] transition-transform duration-500 ease-in-out inline-block group-hover:ml-4">
