@@ -28,9 +28,6 @@ const cards = [
   },
 ];
 
-const CARD_WIDTH = 200;
-const EXPANDED_WIDTH = 400;
-
 const Middle = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -45,64 +42,43 @@ const Middle = () => {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="hidden md:flex relative h-[340px] justify-center items-center overflow-x-auto">
-        <div className="relative" style={{ height: "340px", width: "100%", maxWidth: "1200px" }}>
-          {cards.map((card, index) => {
-            const isHovered = hoveredIndex === index;
-            const leftShift = cards.reduce((acc, _, i) => {
-              if (i < index) {
-                return (
-                  acc +
-                  (hoveredIndex === i ? EXPANDED_WIDTH : CARD_WIDTH)
-                );
-              }
-              return acc;
-            }, 0);
-
-            const width = isHovered ? EXPANDED_WIDTH : CARD_WIDTH;
-
-            return (
-              <div
-                key={index}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className="absolute top-0 transition-all duration-500 ease-in-out rounded-xl overflow-hidden shadow-xl cursor-pointer"
-                style={{
-                  width: `${width}px`,
-                  height: "400px",
-                  left: `${leftShift}px`,
-                  zIndex: isHovered ? 10 : index,
-                }}
+      {/* Desktop Cards */}
+      <div className="hidden md:flex justify-center gap-4 overflow-hidden">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            className="relative rounded-xl overflow-hidden shadow-xl cursor-pointer flex-shrink-0 transition-all duration-500"
+            style={{
+              width: hoveredIndex === index ? "280px" : "200px",
+              height: "340px",
+            }}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-500"
+              style={{
+                backgroundImage: `url(${card.bg})`,
+                transform: hoveredIndex === index ? "scale(1.05)" : "scale(1)",
+                filter: hoveredIndex === index ? "blur(0)" : "blur(2px)",
+              }}
+            />
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="relative z-10 p-5 h-full flex flex-col justify-start">
+              <h3 className="text-lg font-bold mb-2">{card.title}</h3>
+              <p
+                className={`text-sm text-gray-200 transition-all duration-500 ${
+                  hoveredIndex === index ? "opacity-100" : "opacity-0"
+                }`}
               >
-                <div className="absolute inset-0">
-                  <div
-                    className={`w-full h-full bg-cover bg-center transition-all duration-700 ${
-                      isHovered ? "blur-0 scale-105" : "blur-sm"
-                    }`}
-                    style={{ backgroundImage: `url(${card.bg})` }}
-                  />
-                  <div className="absolute inset-0 bg-black/40" />
-                </div>
-                <div className="relative z-20 p-5 h-full flex flex-col justify-start">
-                  <h3 className="text-lg font-bold mb-2">{card.title}</h3>
-                  <p
-                    className={`text-sm text-gray-200 transition-all duration-500 ${
-                      isHovered
-                        ? "opacity-100 translate-x-0"
-                        : "opacity-0 translate-x-5"
-                    }`}
-                  >
-                    {card.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                {card.desc}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* ✅ Mobile version: stacked */}
+      {/* Mobile stacked Cards */}
       <div className="md:hidden grid gap-6">
         {cards.map((card, index) => (
           <div
