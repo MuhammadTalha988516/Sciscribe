@@ -1,25 +1,39 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ✅ Charset first for faster parsing -->
     <meta charset="UTF-8" />
+
+    <!-- ✅ Page title: clear, keyword-focused -->
+    <title>SciScribe — Research Support, Thesis & Training</title>
+
+    <!-- ✅ Meta description: 150–160 chars -->
+    <meta name="description" content="SciScribe supports medical students & researchers with thesis writing, research papers, data analysis, AI training & practical skills." />
+
+    <!-- ✅ Viewport for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>SciScribe</title>
-    <meta name="description" content="SciScribe is an AI-powered platform for research editing, formatting, and publishing support for students and scholars." />
+    <!-- ✅ Robots: index + follow -->
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <link rel="canonical" href="https://www.sciscribe.net/" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- ✅ Preconnect: Faster Google Fonts load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-BmEhzHUD.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-b9NFjaXp.css">
+
+    <!-- ✅ Tailwind or other CSS -->
+    <link href="/src/index.css" rel="stylesheet" />
   </head>
+
   <body class="bg-white">
     <div id="root"></div>
 
-    <!-- Script: entry point -->
+    <!-- ✅ Your main JS -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
