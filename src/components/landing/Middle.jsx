@@ -4,12 +4,12 @@ const cards = [
   {
     title: "Step-by-step thesis help",
     desc: "Clear guidance from your first draft to final formatting.",
-    bg: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=60",
+    bg: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS9BHdAilq_0dqqB5qTQRALbAz3Ark_TiZ9dW3ugUfT8TQqMVWv",
   },
   {
     title: "Tailored for students",
     desc: "Examples and tools that actually match your field.",
-    bg: "https://images.unsplash.com/photo-1543295523-78c9bbdba65c?auto=format&fit=crop&w=800&q=60",
+    bg: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSjctVLvk3sj6OMAOdj2JeNEQe6_i-vaJePut_s6zBs_4i3zhB8",
   },
   {
     title: "Plagiarism-safe writing",

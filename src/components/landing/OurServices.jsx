@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo, useCallback } from "react";
-import "aos/dist/aos.css";
+import React, { useEffect, useRef, useMemo, useCallback } from "react";
 import {
   FileText,
   Brain,
@@ -49,8 +48,9 @@ const services = [
 ];
 
 const OurServices = () => {
-  const triggerRef = useRef(null);
-  const [scrolled, setScrolled] = useState(true);
+  const sectionRef = useRef();
+  const headerRef = useRef();
+  const cardsRef = useRef();
 
   const icons = useMemo(
     () => ({
@@ -64,18 +64,6 @@ const OurServices = () => {
     []
   );
 
-  useEffect(() => {
-    import("aos").then((AOS) => AOS.init({ duration: 700, once: true }));
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolled(entry.isIntersecting),
-      { threshold: 0.1 }
-    );
-
-    if (triggerRef.current) observer.observe(triggerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   const handleContactClick = useCallback(() => {
     window.location.href = "/contact-us";
   }, []);
@@ -84,91 +72,134 @@ const OurServices = () => {
     window.location.href = "/services";
   }, []);
 
+  useEffect(() => {
+    const cardsContainer = cardsRef.current;
+    if (!cardsContainer) return;
+
+    const handleScroll = () => {
+      const cards = Array.from(cardsContainer.children);
+      cards.forEach((card) => {
+        const cardRect = card.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (cardRect.top < windowHeight - 40) {
+          card.style.opacity = 1;
+          card.style.transform = "translateY(0)";
+        } else {
+          card.style.opacity = 0;
+          card.style.transform = "translateY(50px)";
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const header = headerRef.current;
+    if (!section || !header) return;
+
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const scrollProgress = Math.min(
+        Math.max(0, -rect.top / (rect.height - window.innerHeight)),
+        1
+      );
+      if (scrollProgress > 0) {
+        const headerX = scrollProgress * -20;
+        const maxY = 20;
+        const headerY = Math.min(scrollProgress * maxY, maxY);
+        header.style.transform = `translate(-40%, -40%) translate(${headerX}vw, ${headerY}vh)`;
+      } else {
+        header.style.transform = "translate(-50%, -50%)";
+      }
+      header.style.opacity = 1;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="bg-white">
-      {/* Hero */}
-      <div
-        className={`h-[60vh] flex flex-col items-center justify-center text-center px-4 md:px-6 transition-all duration-700 ease-in-out mb-8 ${
-          scrolled
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-6 pointer-events-none"
-        }`}
-      >
-        <h2 className="text-3xl md:text-5xl font-extrabold text-[#00A86B] mb-4">
-          Our Services
-        </h2>
-        <p className="text-gray-600 text-base md:text-lg mb-6 max-w-xl">
-          Supporting your research journey with expert solutions.
-        </p>
-        <button
-          onClick={handleContactClick}
-          className="text-orange-600 font-semibold hover:underline text-base md:text-lg"
-          aria-label="Contact Us"
+    <section
+      ref={sectionRef}
+      className="relative w-full min-h-[250vh] bg-white"
+    >
+      {/* Sticky parent for header */}
+      <div className="sticky  top-0 w-full h-screen pl-1 flex items-center justify-center pointer-events-none">
+        <div
+          ref={headerRef}
+          className="absolute top-1/3 left-1/2 max-w-lg text-center z-10 pointer-events-auto"
+          style={{
+            willChange: "transform, opacity",
+            transition: "transform 0.5s cubic-bezier(0.25, 0.5, 0.94)",
+            transform: "translate(-50%, -50%)",
+          }}
         >
-          GET IN TOUCH →
-        </button>
-      </div>
-
-      <div ref={triggerRef} className="h-[1px] -mt-40" />
-
-      {/* Grid */}
-      <div
-        className={`max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-6 py-20 min-h-screen transition-all duration-700 ease-in-out ${
-          scrolled
-            ? "opacity-0 -translate-y-6 pointer-events-none"
-            : "opacity-100 translate-y-0"
-        }`}
-      >
-        {/* Sticky Left */}
-        <div className="lg:col-span-1 lg:sticky lg:top-20 h-fit bg-white">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#00A86B] mb-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-green-600 mb-6">
             Our Services
           </h2>
-          <p className="text-gray-600 text-base md:text-lg mb-6 max-w-xl">
+          <p className="text-gray-600 text-lg md:text-xl mb-8 leading-relaxed">
             Supporting your research journey with expert solutions.
           </p>
           <button
             onClick={handleContactClick}
-            className="text-orange-600 font-semibold hover:underline text-base md:text-lg"
+            className="text-orange-600 font-semibold hover:underline text-lg md:text-xl transition-colors duration-200"
             aria-label="Contact Us"
           >
             GET IN TOUCH →
           </button>
         </div>
-
-        {/* Right */}
-        <div className="lg:col-span-2 space-y-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              onClick={handleServiceClick}
-              data-aos="fade-up"
-              data-aos-delay={index * 80}
-              className="block bg-gray-50 border border-gray-200 rounded-2xl shadow p-4 md:p-6 hover:shadow-md transition cursor-pointer"
-              role="button"
-              tabIndex={0}
-              aria-label={`Read more about ${service.title}`}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleServiceClick();
-              }}
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                <h4 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-0">
-                  {service.title}
-                </h4>
-                {icons[service.iconKey]}
-              </div>
-              <p className="text-gray-600 text-sm md:text-base mb-3">
-                {service.description}
-              </p>
-              <span className="text-orange-600 font-semibold hover:underline text-xs md:text-sm">
-                Learn More →
-              </span>
-            </div>
-          ))}
-
-        </div>
       </div>
+
+      {/* Sticky cards appear halfway down, right side */}
+      <div
+        ref={cardsRef}
+        className="sticky top-1/2 right-0 flex flex-col gap-6 max-w-lg w-full pr-10 ml-auto"
+        style={{
+          willChange: "transform, opacity",
+        }}
+      >
+        {services.map((service, idx) => (
+          <div
+            key={idx}
+            onClick={handleServiceClick}
+            className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group flex-shrink-0"
+            role="button"
+            tabIndex={0}
+            aria-label={`Read more about ${service.title}`}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleServiceClick();
+            }}
+            style={{
+              opacity: 0,
+              transform: "translateY(50px)",
+              transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            }}
+          >
+            <div className="flex items-center gap-4 mb-3">
+              <div className="flex-shrink-0">{icons[service.iconKey]}</div>
+              <h4 className="font-semibold text-lg text-gray-800 group-hover:text-green-600 transition-colors duration-200">
+                {service.title}
+              </h4>
+            </div>
+            <p className="text-gray-600 text-base leading-relaxed mb-3">
+              {service.description}
+            </p>
+            <span className="text-orange-600 font-semibold hover:underline text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+              Learn More →
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-30 pointer-events-none" />
     </section>
   );
 };
