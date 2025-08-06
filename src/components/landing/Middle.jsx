@@ -38,7 +38,8 @@ const Middle = () => {
           Why Choose Us?
         </h2>
         <p className="text-gray-300 text-base md:text-lg max-w-xl mx-auto">
-          Made for students, researchers, and professionals who want clarity, speed, and quality.
+          Made for students, researchers, and professionals who want clarity,
+          speed, and quality.
         </p>
       </div>
 
@@ -47,6 +48,7 @@ const Middle = () => {
         {cards.map((card, index) => (
           <div
             key={index}
+            onClick={() => (window.location.href = "/contact-us")}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             className="relative rounded-xl overflow-hidden shadow-xl cursor-pointer flex-shrink-0 transition-all duration-500"
@@ -78,11 +80,12 @@ const Middle = () => {
         ))}
       </div>
 
-      {/* Mobile stacked Cards */}
+      {/* Mobile Cards */}
       <div className="md:hidden grid gap-6">
         {cards.map((card, index) => (
           <div
             key={index}
+            onClick={() => (window.location.href = "/contact-us")}
             className="rounded-xl overflow-hidden shadow-xl"
           >
             <div
