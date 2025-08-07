@@ -62,7 +62,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#00A86B] text-white p-6 sm:p-8 md:p-10 rounded-2xl w-full space-y-6 max-w-xl mx-auto"
+      className="bg-[#00A86B] text-white p-6 sm:p-8 md:p-10 rounded-2xl w-full space-y-6 mx-auto"
       data-aos="fade-up"
       data-aos-anchor-placement="center-bottom"
     >

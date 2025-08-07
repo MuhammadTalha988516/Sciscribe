@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import ContactInfo from "../ContactUs/ContactInfo";
+// import ContactInfo from "../ContactUs/ContactInfo";
 import ContactForm from "../ContactUs/ContactForm";
 import Build from "../../assets/Contact.webp";
 
@@ -29,8 +29,8 @@ const ContactPage = () => {
         </p>
       </div>
 
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 pb-20 grid grid-cols-1 md:grid-cols-2 gap-10">
-        <ContactInfo />
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 pb-20 ">
+        {/* <ContactInfo /> */}
         <ContactForm />
       </div>
     </div>
