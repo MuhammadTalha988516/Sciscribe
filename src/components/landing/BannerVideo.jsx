@@ -8,7 +8,7 @@ const BannerVideo = () => {
         loop
         muted
         playsInline
-        preload="metadata" // 👈 better for LCP
+        preload="metadata" 
         poster="/bannerVideoFallback.webp" // 👈 shows instantly
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
