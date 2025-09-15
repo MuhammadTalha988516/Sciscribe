@@ -10,6 +10,7 @@ import ResearchSkills from "../landing/ResearchSkills";
 import CTASection from "../home/CTASection"; // adjust path if needed
 import BannerVideo from "../landing/BannerVideo";
 import OurServices from "../landing/OurServices";
+import Ban from "../landing/Ban"
 
 const Homepage = () => {
   return (
@@ -19,6 +20,7 @@ const Homepage = () => {
 
       {/* ✅ Home sections stacked over video */}
       <div className="relative z-20 flex flex-col space-y-12 md:space-y-20">
+        <Ban/>
         <BannerVideo />
         <Banner />
         <OurServices />
