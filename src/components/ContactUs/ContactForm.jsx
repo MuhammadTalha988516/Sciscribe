@@ -1,4 +1,14 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  User,
+  Mail,
+  Phone,
+  Book,
+  Briefcase,
+  MessageSquare,
+} from "lucide-react";
+import ContactImg from "../../assets/contact.jpeg";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -34,13 +44,6 @@ const ContactForm = () => {
     data.append("entry.905983228", formData.subject);
     data.append("entry.317385170", formData.message);
 
-    if (formData.consent) {
-      data.append(
-        "entry.1502392172",
-        "I consent to SciScribe storing and using my information for communication purposes."
-      );
-    }
-
     fetch(
       "https://docs.google.com/forms/d/e/1FAIpQLSdpzYJp0aSZGwy2XZ6crPs2bAH4Mo4Rc06ciY0g5fDYyj3hXw/formResponse",
       {
@@ -60,135 +63,165 @@ const ContactForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-[#00A86B] text-white p-6 sm:p-8 md:p-10 rounded-2xl w-full space-y-6 mx-auto"
-      data-aos="fade-up"
-      data-aos-anchor-placement="center-bottom"
-    >
-      <h2 className="text-2xl sm:text-3xl font-bold">Send us a Message</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm mb-1">First Name*</label>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-            placeholder="First name"
-            className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
-          />
-        </div>
-        <div>
-          <label className="block text-sm mb-1">Last Name*</label>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-            placeholder="Last name"
-            className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
-          />
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-sm mb-1">Email Address*</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          placeholder="your.email@example.com"
-          className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm mb-1">Phone Number</label>
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="+92 3xx xxxxxxx"
-          className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm mb-1">
-          What service are you interested in?*
-        </label>
-        <select
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
+    <section className="w-full mt-10 py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center min-h-[80vh]">
+        {/* Left: Image with zoom animation */}
+        <motion.div
+          className="w-full h-full overflow-hidden"
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <option value="">Select</option>
-          <option>Editing & Proofreading</option>
-          <option>Scientific Consultancy</option>
-          <option>Data Analysis</option>
-          <option>AI & Machine Learning Training</option>
-          <option>Scientific Writing & Communication</option>
-          <option>In-Person Seminars & Institutional Trainings</option>
-        </select>
-      </div>
+          <img
+            src={ContactImg}
+            alt="Contact"
+            className="object-fill w-full h-full max-h-[100vh] rounded-xl"
+          />
+        </motion.div>
 
-      <div>
-        <label className="block text-sm mb-1">Course</label>
-        <select
-          name="course"
-          value={formData.course}
-          onChange={handleChange}
-          className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
+        {/* Right: Form with slide animation */}
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-gray-800 flex flex-col justify-center space-y-6 px-6 md:px-12"
         >
-          <option value="">Select</option>
-          <option>Bioinformatics Foundations</option>
-          <option>Research Methodology Bootcamp</option>
-          <option>Scientific Writing for Publication</option>
-          <option>Data Analysis with R and SPSS</option>
-          <option>Introduction to AI & ML for Researchers</option>
-        </select>
-      </div>
+          <h2 className="text-4xl font-bold mb-4 text-[#00A86B]">
+            Send us a Message
+          </h2>
 
-      <div>
-        <label className="block text-sm mb-1">Subject Area / Field</label>
-        <input
-          type="text"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          placeholder="e.g., Neuroscience"
-          className="w-full px-4 py-2 bg-gray-300 text-black rounded-md"
-        />
-      </div>
+          {/* Name Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex items-center bg-gray-100 rounded-md px-3">
+              <User className="text-gray-500 mr-2" size={18} />
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+                placeholder="First Name"
+                className="w-full bg-transparent py-3 outline-none"
+              />
+            </div>
+            <div className="flex items-center bg-gray-100 rounded-md px-3">
+              <User className="text-gray-500 mr-2" size={18} />
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+                placeholder="Last Name"
+                className="w-full bg-transparent py-3 outline-none"
+              />
+            </div>
+          </div>
 
-      <div>
-        <label className="block text-sm mb-1">Message*</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          placeholder="Write your message here..."
-          className="w-full px-4 py-2 h-24 bg-gray-300 text-black rounded-md"
-        />
-      </div>
+          {/* Email */}
+          <div className="flex items-center bg-gray-100 rounded-md px-3">
+            <Mail className="text-gray-500 mr-2" size={18} />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="Email Address"
+              className="w-full bg-transparent py-3 outline-none"
+            />
+          </div>
 
-      <button
-        type="submit"
-        className="bg-white text-black py-3 px-6 rounded-full w-full hover:bg-green-400 transition"
-      >
-        Request Free Quote
-      </button>
-    </form>
+          {/* Phone */}
+          <div className="flex items-center bg-gray-100 rounded-md px-3">
+            <Phone className="text-gray-500 mr-2" size={18} />
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+92 3xx xxxxxxx"
+              className="w-full bg-transparent py-3 outline-none"
+            />
+          </div>
+
+          {/* Service */}
+          <div className="flex items-center bg-gray-100 rounded-md px-3">
+            <Briefcase className="text-gray-500 mr-2" size={18} />
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              required
+              className="w-full bg-transparent py-3 outline-none"
+            >
+              <option value="">Select a Service</option>
+              <option>Editing & Proofreading</option>
+              <option>Scientific Consultancy</option>
+              <option>Data Analysis</option>
+              <option>AI & Machine Learning Training</option>
+              <option>Scientific Writing & Communication</option>
+              <option>In-Person Seminars & Institutional Trainings</option>
+            </select>
+          </div>
+
+          {/* Course */}
+          <div className="flex items-center bg-gray-100 rounded-md px-3">
+            <Book className="text-gray-500 mr-2" size={18} />
+            <select
+              name="course"
+              value={formData.course}
+              onChange={handleChange}
+              className="w-full bg-transparent py-3 outline-none"
+            >
+              <option value="">Select a Course</option>
+              <option>Bioinformatics Foundations</option>
+              <option>Research Methodology Bootcamp</option>
+              <option>Scientific Writing for Publication</option>
+              <option>Data Analysis with R and SPSS</option>
+              <option>Introduction to AI & ML for Researchers</option>
+            </select>
+          </div>
+
+          {/* Subject */}
+          <div className="flex items-center bg-gray-100 rounded-md px-3">
+            <Book className="text-gray-500 mr-2" size={18} />
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Subject / Field"
+              className="w-full bg-transparent py-3 outline-none"
+            />
+          </div>
+
+          {/* Message */}
+          <div className="flex items-start bg-gray-100 rounded-md px-3">
+            <MessageSquare className="text-gray-500 mr-2 mt-3" size={18} />
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              placeholder="Write your message..."
+              className="w-full bg-transparent py-3 outline-none h-28 resize-none"
+            />
+          </div>
+
+          {/* Submit */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            type="submit"
+            className="bg-[#00A86B] text-white py-3 px-6 rounded-full w-full hover:bg-green-600 transition"
+          >
+            Request Free Quote
+          </motion.button>
+        </motion.form>
+      </div>
+    </section>
   );
 };
 
